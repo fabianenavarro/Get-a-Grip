@@ -1,0 +1,180 @@
+body{
+font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Bebas Neue', cursive;
+  font-weight: 700; /*Montserrat bold */
+}
+
+p{
+  color: #8f8f8f;
+}
+
+.row{
+  align-content: center;
+}
+
+/* headings */
+.big-heading{
+  font-family: 'Poppins', sans-serif;
+  font-size: 3.5rem;
+  line-height: 1.5;
+  font-weight: 900;/*Montserrat black */
+  align-content: center;
+}
+
+/* containers */
+.container-fluid{
+  padding: 7% 15%;
+}
+
+/* sections */
+.colored-section{
+  background-color: #1E5128;
+  color: white;
+}
+
+
+.white-section{
+  background-color: #000000;
+  color: black;
+}
+/* navigation bar */
+
+.navbar{
+
+  background-color: black;
+}
+
+.navbar-brand{
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.nav-item{
+  padding: 0 18px;
+}
+
+.nav-link{
+  font-size: 1.2rem;
+  font-family:"Montserrat";
+}
+
+.icon{
+  color:#4E9F3D;
+  margin-bottom: 1rem;
+}
+.icon:hover{
+  color: #1E5128;
+}
+/* download buttons */
+.download-button{
+  margin: 5% 3% 5% 0%;
+}
+
+/* title */
+
+
+#title .container-fluid{
+  padding: 3% 15% 7%;
+    text-align: left;
+}
+
+/* title image */
+.title-image{
+  width: 60%;
+  transform: rotate(25deg);
+  position: absolute;
+  right: 30%
+}
+
+@media (max-width:1028px) {
+  .title-image{
+    position:static;
+    transform: rotate(0);
+  }
+
+  #title{
+    text-align: center;
+  }
+}
+
+/* features */
+#features{
+  position: relative;
+}
+.feature-box{
+  padding: 5%;
+}
+
+.feature-title{
+  color: white;
+  font-size: 1.5rem;
+}
+
+
+/* testimonial section */
+
+#testimonials{
+  background-color: #4E9F3D;
+}
+
+.testimonial-image{
+  width: 15%;
+  border-radius: 100%;
+  margin: 20px;
+}
+
+.testimonial-text{
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+
+/* press section */
+#press{
+  background-color: #4E9F3D;
+  padding-bottom: 3%;
+}
+
+.press-logo{
+  width: 15%;
+  margin: 20px 20px 50px;
+}
+
+/* pricing section */
+#pricing{
+  padding: 100px;
+}
+
+.pricing-column{
+  padding: 3% 2%;
+}
+
+.price-text{
+  font-size: 3rem;
+  line-height: 1.5;
+}
+
+.section-heading{
+  font-size: 3rem;
+  line-height: 1.5;
+  color: white;
+}
+
+/* <!-- Call to Action --> */
+
+
+/* footer */
+
+#footer{
+  background-color: #1E5128;
+}
+
+.social{
+  margin: 20px 10px;
+  color: white;
+}
