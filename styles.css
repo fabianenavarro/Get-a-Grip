@@ -1,3 +1,12 @@
+.title-text {
+  font-family: 'Bebas Neue', cursive;
+}
+.getta-grip{
+  color: white;
+}
+.getta-grip:hover{
+  color: #8f8f8f;
+}
 body{
 font-family: 'Poppins', sans-serif;
   text-align: center;
@@ -27,8 +36,18 @@ p{
 
 /* containers */
 .container-fluid{
-  padding: 7% 15%;
+ padding: 7% 15%;
+
 }
+
+.top-pane{
+  padding: 0;
+}
+
+.main-text{
+  padding-top: 100rem;
+}
+
 
 /* sections */
 .colored-section{
@@ -37,14 +56,16 @@ p{
 }
 
 
-.white-section{
+.black-section{
   background-color: #000000;
-  color: black;
+  color: white;
+}
+#exercises .black-section{
+  background-color: black;
 }
 /* navigation bar */
 
 .navbar{
-
   background-color: black;
 }
 
@@ -77,10 +98,18 @@ p{
 
 /* title */
 
+ /* .container-fluid{
+   padding-bottom: 0px;
+ } */
 
 #title .container-fluid{
-  padding: 3% 15% 7%;
-    text-align: left;
+  padding: 0% 5% 3%;
+  text-align: center;
+}
+
+#footer .container-fluid{
+  padding: 2% 5% 2%;
+  text-align: center;
 }
 
 /* title image */
