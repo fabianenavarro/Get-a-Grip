@@ -63,6 +63,15 @@ p{
 #exercises .black-section{
   background-color: black;
 }
+
+.filter-div{
+  margin-top: 8%;
+}
+
+.button{
+
+margin: 2%;
+}
 /* navigation bar */
 
 .navbar{
@@ -91,11 +100,28 @@ p{
 .icon:hover{
   color: #1E5128;
 }
+
+.exercise-icon{
+background-color: #32CD32;
+color: white;
+}
+.exercise-icon:hover{
+  background-color: #4E9F3D;
+
+}
 /* download buttons */
 .download-button{
   margin: 5% 3% 5% 0%;
 }
 
+.page-buttons-section{
+
+  margin-top: 2%;
+}
+
+.page-buttons{
+    color: #32CD32;
+}
 /* title */
 
  /* .container-fluid{
