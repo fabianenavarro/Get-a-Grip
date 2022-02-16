@@ -1,12 +1,3 @@
-.title-text {
-  font-family: 'Bebas Neue', cursive;
-}
-.getta-grip{
-  color: white;
-}
-.getta-grip:hover{
-  color: #8f8f8f;
-}
 body{
 font-family: 'Poppins', sans-serif;
   text-align: center;
@@ -21,9 +12,11 @@ p{
   color: #8f8f8f;
 }
 
+/*default/broad sections*/
 .row{
   align-content: center;
 }
+
 
 /* headings */
 .big-heading{
@@ -34,65 +27,13 @@ p{
   align-content: center;
 }
 
-/* containers */
-.container-fluid{
- padding: 7% 15%;
-
-}
-
-.top-pane{
-  padding: 0;
-}
-
-.main-text{
-  padding-top: 100rem;
-}
-
-
-/* sections */
-.colored-section{
-  background-color: #1E5128;
-  color: white;
-}
-
-
-.black-section{
-  background-color: #000000;
-  color: white;
-}
-#exercises .black-section{
-  background-color: black;
-}
-
-.filter-div{
-  margin-top: 8%;
-}
-
-.button{
-
-margin: 2%;
-}
-/* navigation bar */
-
-.navbar{
-  background-color: black;
-}
-
-.navbar-brand{
+.title-text {
   font-family: 'Bebas Neue', cursive;
-  font-size: 2.5rem;
-  font-weight: bold;
 }
 
-.nav-item{
-  padding: 0 18px;
-}
 
-.nav-link{
-  font-size: 1.2rem;
-  font-family:"Montserrat";
-}
 
+/*icons and buttons*/
 .icon{
   color:#4E9F3D;
   margin-bottom: 1rem;
@@ -109,54 +50,85 @@ color: white;
   background-color: #4E9F3D;
 
 }
+
+.getta-grip{
+  color: white;
+}
+.getta-grip:hover{
+  color: #8f8f8f;
+}
+/* buttons */
+.button{
+margin: 2%;
+}
 /* download buttons */
 .download-button{
   margin: 5% 3% 5% 0%;
 }
 
-.page-buttons-section{
+/* containers */
+.container-fluid{
+ padding: 7% 15%;
 
-  margin-top: 2%;
 }
 
-.page-buttons{
-    color: #32CD32;
+.container-fluid{
+  padding-bottom: 0px;
 }
-/* title */
-
- /* .container-fluid{
-   padding-bottom: 0px;
- } */
 
 #title .container-fluid{
-  padding: 0% 5% 3%;
-  text-align: center;
+ padding: 0% 5% 3%;
+ text-align: center;
 }
 
 #footer .container-fluid{
-  padding: 2% 5% 2%;
-  text-align: center;
+ padding: 2% 5% 2%;
+ text-align: center;
 }
 
-/* title image */
-.title-image{
-  width: 60%;
-  transform: rotate(25deg);
-  position: absolute;
-  right: 30%
+
+
+
+
+/* sections */
+.colored-section{
+  background-color: #1E5128;
+  color: white;
 }
 
-@media (max-width:1028px) {
-  .title-image{
-    position:static;
-    transform: rotate(0);
-  }
 
+.black-section{
+  background-color: #000000;
+  color: white;
+}
+
+
+
+
+
+/* navigation bar */
+
+.navbar-brand{
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.nav-item{
+  padding: 0 18px;
+}
+
+.nav-link{
+  font-size: 1.2rem;
+  font-family:"Montserrat";
+}
+
+/* title */
   #title{
     text-align: center;
   }
 }
-
+/*HOME PAGE EXCLUSIVES*/
 /* features */
 #features{
   position: relative;
@@ -171,65 +143,23 @@ color: white;
 }
 
 
-/* testimonial section */
+/*EXERCISE PAGE EXLUSIVE*/
 
-#testimonials{
-  background-color: #4E9F3D;
+.filter-div {
+  margin-top: 8%;
 }
 
-.testimonial-image{
-  width: 15%;
-  border-radius: 100%;
-  margin: 20px;
+.page-buttons-section{
+
+  margin-top: 2%;
 }
 
-.testimonial-text{
-  font-size: 3rem;
-  line-height: 1.5;
+.page-buttons{
+    color: #32CD32;
 }
-
-
-/* press section */
-#press{
-  background-color: #4E9F3D;
-  padding-bottom: 3%;
-}
-
-.press-logo{
-  width: 15%;
-  margin: 20px 20px 50px;
-}
-
-/* pricing section */
-#pricing{
-  padding: 100px;
-}
-
-.pricing-column{
-  padding: 3% 2%;
-}
-
-.price-text{
-  font-size: 3rem;
-  line-height: 1.5;
-}
-
-.section-heading{
-  font-size: 3rem;
-  line-height: 1.5;
-  color: white;
-}
-
-/* <!-- Call to Action --> */
-
 
 /* footer */
 
 #footer{
   background-color: #1E5128;
-}
-
-.social{
-  margin: 20px 10px;
-  color: white;
 }
