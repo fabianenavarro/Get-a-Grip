@@ -1,165 +1,179 @@
-body{
-font-family: 'Poppins', sans-serif;
+body {
+  font-family: 'Poppins', sans-serif;
   text-align: center;
 }
 
-h1, h2, h3, h4, h5, h6{
+h1, h2, h3, h4, h5, h6 {
   font-family: 'Bebas Neue', cursive;
-  font-weight: 700; /*Montserrat bold */
+  font-weight: 700;
+  /*Montserrat bold */
 }
 
-p{
+p {
   color: #8f8f8f;
 }
 
 /*default/broad sections*/
-.row{
+.row {
   align-content: center;
 }
 
+#features .row {
+  padding-bottom: 5%;
+}
+
+#welcome {
+  padding-top: 5%;
+}
+
+.filter {
+  border: .25rem solid white;
+  background-color: #1E5128;
+  color: white;
+}
+
+.filter:hover {
+  border: .25rem solid white;
+  background-color: white;
+  color: #1E5128;
+}
 
 /* headings */
-.big-heading{
+.big-heading {
   font-family: 'Poppins', sans-serif;
   font-size: 3.5rem;
   line-height: 1.5;
-  font-weight: 900;/*Montserrat black */
+  font-weight: 900;
+  /*Montserrat black */
   align-content: center;
+}
+
+.normal-heading {
+  font-family: 'Poppins', sans-serif;
 }
 
 .title-text {
   font-family: 'Bebas Neue', cursive;
 }
 
-
-
 /*icons and buttons*/
-.icon{
-  color:#4E9F3D;
+.icon {
+  color: #4E9F3D;
   margin-bottom: 1rem;
 }
-.icon:hover{
+
+.icon:hover {
   color: #1E5128;
 }
 
-.exercise-icon{
-background-color: #32CD32;
-color: white;
-}
-.exercise-icon:hover{
-  background-color: #4E9F3D;
-
-}
-
-.getta-grip{
+.exercise-icon {
+  background-color: #32CD32;
   color: white;
 }
-.getta-grip:hover{
+
+.exercise-icon:hover {
+  background-color: #4E9F3D;
+}
+
+.getta-grip {
+  color: white;
+}
+
+.getta-grip:hover {
   color: #8f8f8f;
 }
+
 /* buttons */
-.button{
-margin: 2%;
+.button {
+  margin: 2%;
 }
+
 /* download buttons */
-.download-button{
+.download-button {
   margin: 5% 3% 5% 0%;
 }
 
 /* containers */
-.container-fluid{
- padding: 7% 15%;
-
+.container-fluid {
+  padding: 7% 15%;
 }
 
-.container-fluid{
+.container-fluid {
   padding-bottom: 0px;
 }
 
-#title .container-fluid{
- padding: 0% 5% 3%;
- text-align: center;
+#title .container-fluid {
+  padding: 0% 5% 3%;
+  text-align: center;
 }
 
-#footer .container-fluid{
- padding: 2% 5% 2%;
- text-align: center;
+#footer .container-fluid {
+  padding: 3% 5% 2%;
+  text-align: center;
 }
-
-
-
-
 
 /* sections */
-.colored-section{
+.colored-section {
   background-color: #1E5128;
   color: white;
 }
 
-
-.black-section{
+.black-section {
   background-color: #000000;
   color: white;
 }
 
-
-
-
-
 /* navigation bar */
-
-.navbar-brand{
+.navbar-brand {
   font-family: 'Bebas Neue', cursive;
   font-size: 2.5rem;
   font-weight: bold;
 }
 
-.nav-item{
+.nav-item {
   padding: 0 18px;
 }
 
-.nav-link{
+.nav-link {
   font-size: 1.2rem;
-  font-family:"Montserrat";
+  font-family: "Montserrat";
 }
 
 /* title */
-  #title{
-    text-align: center;
-  }
+#title {
+  text-align: center;
 }
+}
+
 /*HOME PAGE EXCLUSIVES*/
 /* features */
-#features{
+#features {
   position: relative;
 }
-.feature-box{
+
+.feature-box {
   padding: 5%;
 }
 
-.feature-title{
+.feature-title {
   color: white;
   font-size: 1.5rem;
 }
 
-
 /*EXERCISE PAGE EXLUSIVE*/
-
 .filter-div {
   margin-top: 8%;
 }
 
-.page-buttons-section{
-
+.page-buttons-section {
   margin-top: 2%;
 }
 
-.page-buttons{
-    color: #32CD32;
+.page-buttons {
+  color: #32CD32;
 }
 
 /* footer */
-
-#footer{
+#footer {
   background-color: #1E5128;
 }
