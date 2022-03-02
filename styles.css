@@ -13,6 +13,11 @@ p {
   color: #8f8f8f;
 }
 
+.test {
+  background-color: white;
+  color: black;
+}
+
 /*default/broad sections*/
 .row {
   align-content: center;
