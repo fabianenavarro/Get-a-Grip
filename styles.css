@@ -19,6 +19,8 @@ p {
 }
 
 /*default/broad sections*/
+
+
 .row {
   align-content: center;
 }
@@ -88,7 +90,19 @@ p {
   color: #8f8f8f;
 }
 
-/* buttons */
+/* buttons and text */
+
+.text-green{
+  color: #4E9F3D;
+}
+.bg-green{
+  color: #4E9F3D;
+}
+.logo{
+  height: 5rem;
+  width: 10rem;
+  /* margin-bottom: 1rem; */
+}
 .button {
   margin: 2%;
 }
@@ -115,6 +129,12 @@ p {
 #footer .container-fluid {
   padding: 3% 5% 2%;
   text-align: center;
+}
+
+#dashboard .container-fluid{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 0;
 }
 
 /* sections */
