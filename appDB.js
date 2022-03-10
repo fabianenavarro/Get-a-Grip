@@ -16,152 +16,613 @@ const ggSchema = new mongoose.Schema({
   musclegroup: String,
   reps: String,
   equipment: String,
-  selected: String
+  embedded: String,
+  selected: Boolean
 });
 
 
 const Exercise = mongoose.model("Exercise", ggSchema);
+// new object template
+// const = new Exercise ({
+//   name: "",
+//   description: "",
+//   picture: "",
+//   musclegroup: "",
+//   reps: "3x12",
+//   equipment: "",
+//   embedded: "",
+//   selected: 0
+// });
 
 const benchPress = new Exercise ({
   name: "Bench Press",
   description: "Extend arms upward with barbell while lying on the bench.",
-  picture: "N/A",
+  picture: "benchPress.png",
   musclegroup: "Upper",
   reps: "3x12",
   equipment: "Gym",
-  selected: "N/A"
+  embedded: "",
+  selected: 0
 });
-
 const barbellBackSquat = new Exercise ({
   name: "Barbell Back Squat",
   description: "Perform barbell squats by standing with your feet shoulder-width apart. Take a deep breath and unrack a weighted barbell, holding it on your upper back. Keep your chest up and your back straight as you hinge your hips and knees to lower your body through a full range of motion into a squat position.",
-  picture: "N/A",
+  picture: "barbellBackSquat.png",
   musclegroup: "Lower",
   reps: "3x8",
   equipment: "Gym",
-  selected: "N/A"
+  embedded: "",
+  selected: 0
 });
-
 const deadLift = new Exercise ({
   name: "Deadlift",
   description: "Push your feet into the floor and stand up tall, pulling the weight with you and keeping your arms straight. Bring your hips forward and squeeze your abs and glutes at the top. Slowly reverse the movement, bending your knees and pushing your butt back to lower the weight back to the floor.",
-  picture: "N/A",
+  picture: "deadlift.png",
   musclegroup: "Lower",
   reps: "3x6",
   equipment: "Gym",
-  selected: "N/A"
+  embedded: "",
+  selected: 0
 });
-
-const barbellJammers = new Exercise ({
-  name: "Barbell Jammers",
-  description: "Get into a split squat stance, with one foot in front of the other. The raised end of the barbell should be at shoulder height. Take the barbell in one hand by cupping it with an overhand grip. The other arm can rest at your side. Push the bar away from your body until your arm is extended. Pause at the top and lower the bar back to the starting position. Continue until you reach the desired amount of reps on one side, then switch sides. ",
-  picture: "N/A",
-  musclegroup: "Upper",
-  reps: "3x12",
-  equipment: "Gym",
-  selected: "N/A"
-});
-
 const lunges = new Exercise ({
   name: "Lunges",
   description: "Take a big step forward, keeping your back straight. Bend your front knee to about 90 degrees. Keep weight on your back toes and drop the back knee toward the floor. Don't let the back knee touch the floor. ",
-  picture: "N/A",
+  picture: "lunges.png",
   musclegroup: "Lower",
   reps: "3x20",
   equipment: "Home",
-  selected: "N/A"
+  embedded: "",
+  selected: 0
 });
-
 const starJumps = new Exercise ({
   name: "Star Jumps",
   description: "Stand tall with arms and legs straight, jump while spreading your arms and legs open",
-  picture: "N/A",
+  picture: "starJumps.png",
   musclegroup: "Cardio",
   reps: "3x40",
   equipment: "Home",
-  selected: "N/A"
+  embedded: "",
+  selected: 0
 });
-
 const russianTwists = new Exercise ({
   name: "Russian Twists",
   description: "Lie on your back, and lift your knees up so your back and legs form a 90 degree angle. Then twist your body left and right with or without weights.",
-  picture: "N/A",
-  musclegroup: "Cardio",
+  picture: "russianTwists.png",
+  musclegroup: "Upper",
   reps: "3x60",
   equipment: "Home",
-  selected: "N/A"
+  embedded: "",
+  selected: 0
 });
-
 const pushups = new Exercise ({
   name: "Pushups",
   description: "Lie on the floor with your stomach facing the ground, stand on the points of your feet and push off the ground with you arms at shoulder distance length.",
-  picture: "N/A",
-  musclegroup: "Cardio",
+  picture: "pushups.png",
+  musclegroup: "Upper",
   reps: "3x20",
   equipment: "Home",
-  selected: "N/A"
+  embedded: "",
+  selected: 0
 });
-
 const pullups = new Exercise ({
   name: "Pullups",
   description: "Hang onto a stable bar, and execute a closed-chain movement, with the body lifted by the hands, being pulled upwards.",
-  picture: "N/A",
+  picture: "pullups.png",
   musclegroup: "Upper",
   reps: "3x12",
   equipment: "Home",
-  selected: "N/A"
+  embedded: "",
+  selected: 0
 });
-const chinups = new Exercise ({
-  name: "Chinups",
-  description: "Similar to the pull-up, have the range of motion be dictated by the chin being above the bar.",
-  picture: "N/A",
-  musclegroup: "Upper",
-  reps: "3x12",
-  equipment: "Home",
-  selected: "N/A"
-});
-
 const situps = new Exercise ({
   name: "Situps",
   description: "Lie with your back on the floor, and hands preferably behind the head. Anchor the feet down and lift your body up to a 45-degree angle with your core muscles.",
-  picture: "N/A",
-  musclegroup: "Cardio",
+  picture: "situps.png",
+  musclegroup: "Upper",
   reps: "3x20",
   equipment: "Home",
-  selected: "N/A"
+  embedded: "",
+  selected: 0
 });
-
 const planks = new Exercise ({
   name: "Planks",
   description: "Get in the Push-up position, and keep arms at shoulder with while maintaining a lift off the ground for a set duration",
-  picture: "N/A",
+  picture: "planks.png",
+  musclegroup: "Upper",
+  reps: "3x60s",
+  equipment: "Home",
+  embedded: "",
+  selected: 0
+});
+const miniHops = new Exercise ({
+  name: "Mini Hops",
+  description: "An unweighted mini squat into a short jump straight into the air.",
+  picture: "miniHops.png",
+  musclegroup: "Lower",
+  reps: "3x20",
+  equipment: "Home",
+  embedded: "",
+  selected: 0
+});
+const shoulderTaps = new Exercise ({
+  name: "Shoulder Taps",
+  description: "While planking, you rapidly lift one hand to tap the opposite shoulder and put it back down.",
+  picture: "shoulderTaps.png",
+  musclegroup: "Upper",
+  reps: "3x20",
+  equipment: "Home",
+  embedded: "",
+  selected: 0
+});
+const sidePlank = new Exercise ({
+  name: "Side Plank",
+  description: "Lie on your side and life your body up with your elbow parallel to your shoulders - can be done in high or low position.",
+  picture: "sidePlank.png",
+  musclegroup: "Upper",
+  reps: "3x60s",
+  equipment: "Home",
+  embedded: "",
+  selected: 0
+});
+const handReleasePushups = new Exercise ({
+  name: "Hand Release Pushups",
+  description: "At the bottom of the push-up, lift your hands off the ground before pushing back up.  Make sure to keep a solid plank position with your core.",
+  picture: "handReleasePushups",
+  musclegroup: "Upper",
+  reps: "3x15",
+  equipment: "Home",
+  embedded: "",
+  selected: 0
+});
+const declinePushups = new Exercise ({
+  name: "Decline Pushups",
+  description: "To work the upper chest and shoulders more just do a push up with your feet on a bench or stack of plates.",
+  picture: "declinePushups.png",
+  musclegroup: "Upper",
+  reps: "3x20",
+  equipment: "Home",
+  embedded: "",
+  selected: 0
+});
+const vups = new Exercise ({
+  name: "Vups",
+  description: "Lay flat on the floor.  Lift your legs and upper body off the floor at the same time (making a v-shape) and touch your toes.  Then come back down.",
+  picture: "vups.png",
+  musclegroup: "Upper",
+  reps: "3x30",
+  equipment: "Home",
+  embedded: "",
+  selected: 0
+});
+const gobletSquats = new Exercise ({
+  name: "Goblet Squats",
+  description: "This is a traditional front squat, but with a heavy dumbbell or kettlebell held just below your chin.",
+  picture: "gobletSquats.png",
+  musclegroup: "Lower",
+  reps: "3x20",
+  equipment: "Home",
+  embedded: "",
+  selected: 0
+});
+const halos = new Exercise ({
+  name: "Halos",
+  description: "Take a weight in both hands, and trace a halo around your head.",
+  picture: "halos.png",
+  musclegroup: "Upper",
+  reps: "3x20",
+  equipment: "Home",
+  embedded: "",
+  selected: 0
+});
+const lateralRaise= new Exercise ({
+  name: "Lateral Raise",
+  description: "With the dumbell facing foward and arms lowered, extend arms upward in line with shoulders, then lower.",
+  picture: "latearlRaise.png",
+  musclegroup: "Upper",
+  reps: "3x15",
+  equipment: "Home",
+  embedded: "",
+  selected: 0
+});
+const chestPress = new Exercise ({
+  name: "Chest Press",
+  description: "Lie on a flat bench, hold two dumbells wit palms facing forward and thumbs wraped, lower to slightly wider than mid chest, lower slowly to eye level.",
+  picture: "chestPress.png",
+  musclegroup: "Upper",
+  reps: "3x12",
+  equipment: "Home",
+  embedded: "",
+  selected: 0
+});
+const bicepCurl = new Exercise ({
+  name: "Bicep Curl",
+  description: "Lower arms to the side, then extend fists out. Lift up to your chest, then lower back to former position.",
+  picture: "bicepCurl.png",
+  musclegroup: "Upper",
+  reps: "3x20",
+  equipment: "Home",
+  embedded: "",
+  selected: 0
+});
+const pushPress = new Exercise ({
+  name: "Push Press",
+  description: "Grab a barbell with overhand, and hold it to shoulder height. Low your knees and keep your torso upright, then extend your knees and hips to drive the barbell overhead, standing tall.",
+  picture: "pushPress.png",
+  musclegroup: "Cardio",
+  reps: "3x12",
+  equipment: "Gym",
+  embedded: "",
+  selected: 0
+});
+const inclineBenchPress = new Exercise ({
+  name: "Incline Bench Press",
+  description: "Set a bench to a 30 - 45 degree angle, then lie with back on it and a dumbell in each hand at shoulder level. Arch back, drive feet and press the weights over your chest.",
+  picture: "inclineBenchPress",
+  musclegroup: "Upper",
+  reps: "3x12",
+  equipment: "Gym",
+  embedded: "",
+  selected: 0
+});
+const bentoverRow = new Exercise ({
+  name: "Bentover Row",
+  description: "Grasp the weight with an overhand grip and bend forward so the torso is parallel to the floor. Squeeze your shoulder blades and row the weight to your neck.",
+  picture: "bentoverRow.png",
+  musclegroup: "Upper",
+  reps: "3x20",
+  equipment: "Gym",
+  embedded: "",
+  selected: 0
+});
+const oneArmRow = new Exercise ({
+  name: "One Arm Row",
+  description: "Grab a dumbell in one hand, and rest your knee on a bench. Whith opposite arm hanging, keep body perpendicular to the ground and lift the weight up to your side.",
+  picture: "oneArmRow.png",
+  musclegroup: "Upper",
+  reps: "3x20",
+  equipment: "Gym",
+  embedded: "",
+  selected: 0
+});
+const ezBarCurl = new Exercise ({
+  name: "Ez Bar Curl",
+  description: "Hold an EZ bar (palms facing up) with a shoulder-width grip and arms extended with a slight bend at the elbows. Keeping your upper arms at your sides, curl the bar up.",
+  picture: "ezBarCurl.png",
+  musclegroup: "Upper",
+  reps: "3x12",
+  equipment: "Gym",
+  embedded: "",
+  selected: 0
+});
+const dumbellCurl = new Exercise ({
+  name: "Dumbbell Curl",
+  description: "Stand or set an adjustable bench to a 45- to 60-degree incline and lie back against it with a dumbbell in each hand. Hold the weights with your palms facing up and a braced core. Then, keeping your upper arms vertical, curl the weights up.",
+  picture: "dumbellCurl.png",
+  musclegroup: "Cardio",
+  reps: "3x20",
+  equipment: "Gym",
+  embedded: "",
+  selected: 0
+});
+const hammerCurl = new Exercise ({
+  name: "Hammer Curl",
+  description: "Hold a dumbbell in each hand with palms facing your sides and arms extended straight down. Keeping your upper arms against your sides, curl both weights at the same time.",
+  picture: "hammerCurl.png",
+  musclegroup: "Upper",
+  reps: "3x20",
+  equipment: "Gym",
+  embedded: "",
+  selected: 0
+});
+const crossbodyCurl = new Exercise ({
+  name: "Cross-body Curl",
+  description: "old a dumbbell in each hand with arms hanging at your sides and palms facing the body. With an upright posture, slowly begin to curl one dumbbell up across your body to opposite shoulder. Pause for one second and slowly lower back to the starting position.",
+  picture: "crossbodyCurl.png",
   musclegroup: "Cardio",
   reps: "3x60s",
   equipment: "Home",
-  selected: "N/A"
+  embedded: "",
+  selected: 0
+});
+const tricepPushdown = new Exercise ({
+  name: "Tricep Pushdown",
+  description: "Attach a rope handle to the top pulley of a cable station and grasp an end in each hand. Push the weight down to lock out your elbows and then let your elbows drift back slightly on the way up so you feel a stretch in your triceps.",
+  picture: "tricepPushdown.png",
+  musclegroup: "Upper",
+  reps: "3x30",
+  equipment: "Gym",
+  embedded: "",
+  selected: 0
+});
+const lyingTricepExtension = new Exercise ({
+  name: "Lying Tricep Extension",
+  description: "Lying on a bench, hold the weights directly over your face. Keeping your upper arms at that angle, bend your elbows and lower the weights behind your head. Extend your elbows, keeping the same angle with your upper arms.",
+  picture: "lyingTricepExtension.png",
+  musclegroup: "Upper",
+  reps: "3x12",
+  equipment: "Gym",
+  embedded: "",
+  selected: 0
+});
+const hangClean = new Exercise ({
+  name: "Hang Clean",
+  description: "Start by holding the bar against your body with your hands at shoulder-width on the bar. Keeping your back in its natural curve, bend your hips and knees (as you would in a squat), lowering the bar to just above your knees. Explosively extend your hips as if jumping, while at the same time shrugging your shoulders and pulling the bar straight up in front of your torso.",
+  picture: "hangClean.png",
+  musclegroup: "Upper",
+  reps: "3x15",
+  equipment: "Gym",
+  embedded: "",
+  selected: 0
+});
+const bentoverLateralRaise = new Exercise ({
+  name: "Bentover Lateral Raise",
+  description: "Hold a dumbbell in each hand and, keeping your lower back in its natural arch, bend your hips back until your torso is about parallel to the floor. Allow your arms to hang. Now, squeeze your shoulder blades together and raise your arms out 90 degrees, with thumbs pointing up, until your upper arms are parallel to the floor.",
+  picture: "bentoverLateralRaise.png",
+  musclegroup: "Cardio",
+  reps: "3x60s",
+  equipment: "Home",
+  embedded: "",
+  selected: 0
+});
+const inclineYTW = new Exercise ({
+  name: "Incline YTW",
+  description: "Sit on a bench with an incline and your frontal body facing the seat. Then extend and raise your arms in the shape of a “Y” formation (thumbs upward) for the first position. Then bring them down to form a “T” (thumbs down). Follow with the last movement by putting your arms in the shape of a “W” by shrugging and squeezing your shoulder blades together.",
+  picture: "inclineYTW.png",
+  musclegroup: "Upper",
+  reps: "3x15",
+  equipment: "Gym",
+  embedded: "",
+  selected: 0
+});
+const shrug = new Exercise ({
+  name: "Shrug",
+  description: "Hold dumbbells at your sides and stand with feet shoulder width apart. Bend your hips back to squat down until the weights are knee level. Now explode upward and shrug hard at the top. Reset your feet before beginning the next rep.",
+  picture: "shrug.png",
+  musclegroup: "Cardio",
+  reps: "3x60s",
+  equipment: "Home",
+  embedded: "",
+  selected: 0
+});
+const closegripDumbbellPress = new Exercise ({
+  name: "Close-Grip Dumbbell Press",
+  description: "Lie faceup on a bench, grasping a barbell with your index fingers on the inside edge of the knurling (the rough part of the bar). Arch your back and pull the bar off the rack. Lower it to your sternum, tucking your elbows about 45 degrees from your sides. When the bar touches your body, drive your feet hard into the floor and press the bar directly above you.",
+  picture: "closegripDumbbellPress.png",
+  musclegroup: "Upper",
+  reps: "3x12",
+  equipment: "Home",
+  embedded: "",
+  selected: 0
+});
+const splitSquats = new Exercise ({
+  name: "Split Squats",
+  description: "Holding dumbbells, slowly lunge forwards, keeping the knee in line with the toe. Without stopping at the bottom, push back up to the start position. Now swap legs.",
+  picture: "splitSquat.png",
+  musclegroup: "Lower",
+  reps: "3x12",
+  equipment: "Home",
+  embedded: "",
+  selected: 0
+});
+const seatedShoulderPress = new Exercise ({
+  name: "Seated Shoulder Press",
+  description: "Sitting upright on a bench, start with dumbbells held straight above your head. Slowly bend your elbows and lower dumbbells until they are in line with your shoulders, then drive up.",
+  picture: "seatedShoulderPress.png",
+  musclegroup: "Upper",
+  reps: "3x12",
+  equipment: "Gym",
+  embedded: "",
+  selected: 0
+});
+const hipThrusts = new Exercise ({
+  name: "Hip Thrusts",
+  description: "Sit on the floor, back against a bench or step. Roll a dumbbell (or barbell) onto the front of your hips. With knees bent, shoulders on the bench, drive hips off the floor until your back is parallel.",
+  picture: "hipThrusts.png",
+  musclegroup: "Lower",
+  reps: "3x20",
+  equipment: "Home",
+  embedded: "",
+  selected: 0
+});
+const dumbbellDeadlift = new Exercise ({
+  name: "Dumbell Deadlift",
+  description: "Keeping your legs straight, bend at the hips to lower your weighted hands towards the floor. Go to just below knee height and then stand straight again. Clench your glutes and core muscles as you do so.",
+  picture: "dumbellDeadlift.png",
+  musclegroup: "Lower",
+  reps: "3x10",
+  equipment: "Home",
+  embedded: "",
+  selected: 0
+});
+const stepups = new Exercise ({
+  name: "Stepups",
+  description: "Start with your weaker leg on a step or box and, with or without dumbbells in your hands, step onto it. Without pausing at the top, lower back to the start position, leaving your start foot on the box and then stepping straight back up on the same leg.",
+  picture: "stepups.png",
+  musclegroup: "Lower",
+  reps: "3x12",
+  equipment: "Home",
+  embedded: "",
+  selected: 0
+});
+const seatedBicepCurl = new Exercise ({
+  name: "Seated Bicep Curl",
+  description: "Sit upright holding dumbbells, arms down by your sides, palms facing forwards. Bend arms at the elbow, keeping shoulders still until the dumbbells almost reach them.",
+  picture: "seatedBicepCurl.png",
+  musclegroup: "Upper",
+  reps: "3x12",
+  equipment: "Home",
+  embedded: "",
+  selected: 0
+});
+const lateralPulldown = new Exercise ({
+  name: "Lateral Pulldown",
+  description: "Perform the lat pulldown exercise by sitting in front of a cable machine with a pulldown bar. Grab the bar and bend your elbows to lower it closer towards your upper chest.",
+  picture: "lateralPulldown.png",
+  musclegroup: "Upper",
+  reps: "3x15",
+  equipment: "Gym",
+  embedded: "",
+  selected: 0
+});
+const legCurl = new Exercise ({
+  name: "Leg Curl",
+  description: "Exhale and flex your knees, pulling your ankles as close to your buttocks as you can. Keep your hips firmly on the bench. Hold briefly.",
+  picture: "legCurl.png",
+  musclegroup: "Lower",
+  reps: "3x12",
+  equipment: "Gym",
+  embedded: "",
+  selected: 0
+});
+const seatedCableRow = new Exercise ({
+  name: "Seated Cable Row",
+  description: "Pull the handle and weight back toward the lower abdomen while trying not to use the momentum of the row too much by moving the torso backward with the arms.",
+  picture: "seatedCableRow.png",
+  musclegroup: "Upper",
+  reps: "3x20",
+  equipment: "Gym",
+  embedded: "",
+  selected: 0
+});
+const legPress = new Exercise ({
+  name: "Leg Press",
+  description: "Brace your abdominal muscles and push the platform away with your heels and forefoot. While exhaling, extend your legs and keep your head and back flat against the seat pad.",
+  picture: "legPress.png",
+  musclegroup: "Lower",
+  reps: "3x16",
+  equipment: "Gym",
+  embedded: "",
+  selected: 0
+});
+const romanianDeadlift = new Exercise ({
+  name: "Romanian Deadlift",
+  description: "To start the move, stand with the bar or weight in your hands as opposed to the floor. Slowly lower the weight with a slight bend in your knees, bending at the hips and keeping your back straight. Lower until you feel a slight stretch in your hamstrings – usually when the weight has just passed your knees – then drive your hips forwards and use your hamstrings to power back up to standing.",
+  picture: "romanianDeadlift.png",
+  musclegroup: "Lower",
+  reps: "3x8",
+  equipment: "Gym",
+  embedded: "",
+  selected: 0
+});
+const overheadTricepExtension = new Exercise ({
+  name: "OverHead Tricep Extension",
+  description: "Hold the weight overhead by grasping the inside dumbbell plate surface with both hands. Slowly bend your elbows and lower the weight behind your head as far as you can.",
+  picture: "overheadTricepExtension.png",
+  musclegroup: "Upper",
+  reps: "3x14",
+  equipment: "Home",
+  embedded: "",
+  selected: 0
+});
+const cableCrossover = new Exercise ({
+  name: "Cable Crossover",
+  description: "Step forward in front of an imaginary straight line between both pulleys while pulling your arms together in front of you.",
+  picture: "cableCrossover.png",
+  musclegroup: "Cardio",
+  reps: "3x16",
+  equipment: "Gym",
+  embedded: "",
+  selected: 0
+});
+const floorPress = new Exercise ({
+  name: "Floor Press",
+  description: " Slowly lay back while keeping the dumbbells close to your chest and bend your knees to roughly 45 degrees and move your feet up slightly. Press the weights to full extension by contracting your triceps and chest",
+  picture: "floorPress.png",
+  musclegroup: "Upper",
+  reps: "3x12",
+  equipment: "Home",
+  embedded: "",
+  selected: 0
+});
+const landminePress = new Exercise ({
+  name: "Landmine Press",
+  description: "Place the end of the barbell into the landmine device, and stand facing the barbell. Using a full grip (with your thumbs wrapped around the bar), clasp the lever of the barbell with both hands.",
+  picture: "landminePress.png",
+  musclegroup: "Upper",
+  reps: "3x12",
+  equipment: "Gym",
+  embedded: "",
+  selected: 0
+});
+const lyingHamstringCurl = new Exercise ({
+  name: "Lying Hamstring Curl",
+  description: "Lie on your stomach with your legs straight out behind you. Support your upper body with your forearms. Position a dumbbell vertically in between the arches of your feet. Lift your legs so the dumbbell hovers just above the floor",
+  picture: "lyingHamstringCurl.png",
+  musclegroup: "Lower",
+  reps: "3x12s",
+  equipment: "Home",
+  embedded: "",
+  selected: 0
+});
+const hackSquats = new Exercise ({
+  name: "Hack Squats",
+  description: "Step into the machine, placing your feet shoulder-width apart and your shoulders and back against the pads. Release the safety handles, inhale, and lower down, bending your knees until they reach a 90-degree angle.",
+  picture: "hackSquat.png",
+  musclegroup: "Lower",
+  reps: "3x12",
+  equipment: "Gym",
+  embedded: "",
+  selected: 0
+});
+const dumbbellRDLShrug = new Exercise ({
+  name: "Dumbbell RDL Shrug",
+  description: "Hold a dumbbell in each hand, palms facing thighs, arms straight. Stand with feet hip width, with a natural arch in your lower back. Engaging your abs, lower your hips back as you lower the dumbbells.",
+  picture: "dumbellRDLShrug.png",
+  musclegroup: "Upper",
+  reps: "3x12",
+  equipment: "Home",
+  embedded: "",
+  selected: 0
+});
+const kneelingPushups = new Exercise ({
+  name: "Kneeling Pushups",
+  description: "",
+  picture: "kneelingPushUp.png",
+  musclegroup: "Upper",
+  reps: "3x16",
+  equipment: "Home",
+  embedded: "",
+  selected: 0
+});
+const runningSprint = new Exercise ({
+  name: "Running Sprint",
+  description: "X sets of top speed, with non sprinting time dedicated to walking.",
+  picture: "runningSprint.png",
+  musclegroup: "Cardio",
+  reps: "5x10s",
+  equipment: "Home",
+  embedded: "",
+  selected: 0
+});
+const walk = new Exercise ({
+  name: "Walk",
+  description: "...",
+  picture: "walk.png",
+  musclegroup: "Cardio",
+  reps: "3x15m",
+  equipment: "Home",
+  embedded: "",
+  selected: 0
+});
+const cableWoodchop= new Exercise ({
+  name: "Cable Woodchop",
+  description: "tand to the left of a high cable machine and hold the handle with both hands, arms straight. Step your right foot one to two feet in front of your left, knees slightly bent. Keeping your arms straight and eyes on your hands, pull the handle down and across your body until it's outside your left leg.",
+  picture: "cableWoodchop.png",
+  musclegroup: "Upper",
+  reps: "3x16",
+  equipment: "Gym",
+  embedded: "",
+  selected: 0
 });
 
-Exercise.insertMany([benchPress, barbellBackSquat, deadLift, barbellJammers, lunges, starJumps, russianTwists, pushups, pullups, chinups, situps, planks],function(err){
+
+Exercise.insertMany([benchPress, barbellBackSquat, deadLift, barbellJammers, lunges, starJumps, russianTwists, pushups, pullups, chinups, situps, planks, miniHops, shoulderTaps, sidePlank, handReleasePushups, declinePushups, vups, gobletSquats, halos, lateralRaise, chestPress, bicepCurl, pushPress, inclineBenchPress, bentoverRow, oneArmRow, ezBarCurl, dumbbellCurl, hammerCurl, crossbodyCurl, tricepPushdown, lyingTricepExtension, hangClean, bentoverLateralRaise, inclineTW, shrug, closegripDumbbellPress, splitSquats, seatedShoulderPress, hipThrust, dumbbellDeadlift, stepups, seatedBicepCurl, lateralPulldown, legPress, romanianDeadlift, overheadTricepExtension, cableCrossoverm, floorPress, landminePress, lyingHamstringCurl, hackSquats, dumbbellRDLShrug, kneelingPushups, runningSprint walk, cableWoodchop], function(err){
   if(err){
     console.log(err);
   }else {
     console.log("Successful operation, insertion complete. ")
   }
 })
-
-// const kiwi = new Fruit({
-//   name: "Kiwi",
-//   score: 10,
-//   review: "tightest pussy"
-// });
-
-// Fruit.insertMany([kiwi], function(err){
-//   if(err){
-//     console.log(err);
-//   }else {
-//     console.log("success");
-//   }
-// });
 
 
 Exercise.find(function(err, exercises){
