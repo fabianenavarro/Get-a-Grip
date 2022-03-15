@@ -90,7 +90,7 @@ p {
   color: #8f8f8f;
 }
 
-/* buttons and text */
+/* buttons and text and logo */
 
 .text-green{
   color: #4E9F3D;
@@ -103,8 +103,18 @@ p {
   width: 10rem;
   /* margin-bottom: 1rem; */
 }
+
+.logo-md{
+  height: 10rem;
+  width: 18rem;
+}
 .button {
   margin: 2%;
+}
+
+.trash{
+border: none;
+background: white;
 }
 
 /* download buttons */
@@ -202,3 +212,34 @@ p {
 #footer {
   background-color: #1E5128;
 }
+
+/*LOGIN PAGE EXCLUSIVE*/
+
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 2rem;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* EVENTS */
