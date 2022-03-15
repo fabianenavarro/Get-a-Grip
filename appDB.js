@@ -1,8 +1,16 @@
 //jshint esversion:6
 //You need to install the current version of mongoshell from the mongoDB website to get this working
 //Initialize mongod on a separate shell before you run on a different shell!
-
+const { MongoClient, ServerApiVersion } = require('mongodb');
 const mongoose = require('mongoose')
+const uri = "mongodb+srv://tommy:tommy@gettagrip.3ilws.mongodb.net/exercises?retryWrites=true&w=majority";
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+client.connect(err => {
+  const collection = client.db("test").collection("devices");
+  // perform actions on the collection object
+  client.close();
+});
+
 
 mongoose.connect("mongodb://localhost:27017/fruitsDB", {useNewUrlParser: true});
 
@@ -34,6 +42,8 @@ const Exercise = mongoose.model("Exercise", ggSchema);
 //   selected: 0
 // });
 
+
+//<iframe width="1280" height="720" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 const benchPress = new Exercise ({
   name: "Bench Press",
   description: "Extend arms upward with barbell while lying on the bench.",
@@ -41,7 +51,7 @@ const benchPress = new Exercise ({
   musclegroup: "Upper",
   reps: "3x12",
   equipment: "Gym",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=gRVjAtPip0Y",
   selected: 0
 });
 const barbellBackSquat = new Exercise ({
@@ -51,7 +61,7 @@ const barbellBackSquat = new Exercise ({
   musclegroup: "Lower",
   reps: "3x8",
   equipment: "Gym",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=CWl0apMgshk",
   selected: 0
 });
 const deadLift = new Exercise ({
@@ -61,7 +71,7 @@ const deadLift = new Exercise ({
   musclegroup: "Lower",
   reps: "3x6",
   equipment: "Gym",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=op9kVnSso6Q",
   selected: 0
 });
 const lunges = new Exercise ({
@@ -71,7 +81,7 @@ const lunges = new Exercise ({
   musclegroup: "Lower",
   reps: "3x20",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=Z2n58m2i4jg",
   selected: 0
 });
 const starJumps = new Exercise ({
@@ -81,7 +91,7 @@ const starJumps = new Exercise ({
   musclegroup: "Cardio",
   reps: "3x40",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=hPFtd4K-khA",
   selected: 0
 });
 const russianTwists = new Exercise ({
@@ -91,7 +101,7 @@ const russianTwists = new Exercise ({
   musclegroup: "Upper",
   reps: "3x60",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=JyUqwkVpsi8",
   selected: 0
 });
 const pushups = new Exercise ({
@@ -101,7 +111,7 @@ const pushups = new Exercise ({
   musclegroup: "Upper",
   reps: "3x20",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=6JroV8rJk2M",
   selected: 0
 });
 const pullups = new Exercise ({
@@ -111,7 +121,7 @@ const pullups = new Exercise ({
   musclegroup: "Upper",
   reps: "3x12",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=aAggnpPyR6E",
   selected: 0
 });
 const situps = new Exercise ({
@@ -121,7 +131,7 @@ const situps = new Exercise ({
   musclegroup: "Upper",
   reps: "3x20",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=1fbU_MkV7NE",
   selected: 0
 });
 const planks = new Exercise ({
@@ -131,7 +141,7 @@ const planks = new Exercise ({
   musclegroup: "Upper",
   reps: "3x60s",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=5EFcTkm0J-w",
   selected: 0
 });
 const miniHops = new Exercise ({
@@ -141,7 +151,7 @@ const miniHops = new Exercise ({
   musclegroup: "Lower",
   reps: "3x20",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=UDZBGzeQea0",
   selected: 0
 });
 const shoulderTaps = new Exercise ({
@@ -151,7 +161,7 @@ const shoulderTaps = new Exercise ({
   musclegroup: "Upper",
   reps: "3x20",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=mifkJdYqsZY",
   selected: 0
 });
 const sidePlank = new Exercise ({
@@ -161,7 +171,7 @@ const sidePlank = new Exercise ({
   musclegroup: "Upper",
   reps: "3x60s",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=IkMmABQ9SkM",
   selected: 0
 });
 const handReleasePushups = new Exercise ({
@@ -171,7 +181,7 @@ const handReleasePushups = new Exercise ({
   musclegroup: "Upper",
   reps: "3x15",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=kHtt49_Pljw",
   selected: 0
 });
 const declinePushups = new Exercise ({
@@ -181,7 +191,7 @@ const declinePushups = new Exercise ({
   musclegroup: "Upper",
   reps: "3x20",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=SKPab2YC8BE",
   selected: 0
 });
 const vups = new Exercise ({
@@ -191,7 +201,7 @@ const vups = new Exercise ({
   musclegroup: "Upper",
   reps: "3x30",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=7UVgs18Y1P4",
   selected: 0
 });
 const gobletSquats = new Exercise ({
@@ -201,7 +211,7 @@ const gobletSquats = new Exercise ({
   musclegroup: "Lower",
   reps: "3x20",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=mF5tnEBrdkc",
   selected: 0
 });
 const halos = new Exercise ({
@@ -211,7 +221,7 @@ const halos = new Exercise ({
   musclegroup: "Upper",
   reps: "3x20",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=wJcmanVh5EE",
   selected: 0
 });
 const lateralRaise= new Exercise ({
@@ -221,17 +231,17 @@ const lateralRaise= new Exercise ({
   musclegroup: "Upper",
   reps: "3x15",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=kDqklk1ZESo",
   selected: 0
 });
 const chestPress = new Exercise ({
   name: "Chest Press",
-  description: "Lie on a flat bench, hold two dumbells wit palms facing forward and thumbs wraped, lower to slightly wider than mid chest, lower slowly to eye level.",
+  description: "Lie on a flat bench, hold two dumbells with palms facing forward and thumbs wraped, lower to slightly wider than mid chest, lower slowly to eye level.",
   picture: "chestPress.png",
   musclegroup: "Upper",
   reps: "3x12",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=VmB1G1K7v94",
   selected: 0
 });
 const bicepCurl = new Exercise ({
@@ -241,7 +251,7 @@ const bicepCurl = new Exercise ({
   musclegroup: "Upper",
   reps: "3x20",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=uO_CNYidOw0",
   selected: 0
 });
 const pushPress = new Exercise ({
@@ -251,7 +261,7 @@ const pushPress = new Exercise ({
   musclegroup: "Cardio",
   reps: "3x12",
   equipment: "Gym",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=iaBVSJm78ko",
   selected: 0
 });
 const inclineBenchPress = new Exercise ({
@@ -261,7 +271,7 @@ const inclineBenchPress = new Exercise ({
   musclegroup: "Upper",
   reps: "3x12",
   equipment: "Gym",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=dynoKEIcpoU",
   selected: 0
 });
 const bentoverRow = new Exercise ({
@@ -271,7 +281,7 @@ const bentoverRow = new Exercise ({
   musclegroup: "Upper",
   reps: "3x20",
   equipment: "Gym",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=VKFeB7ST830",
   selected: 0
 });
 const oneArmRow = new Exercise ({
@@ -281,7 +291,7 @@ const oneArmRow = new Exercise ({
   musclegroup: "Upper",
   reps: "3x20",
   equipment: "Gym",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=PgpQ4-jHiq4",
   selected: 0
 });
 const ezBarCurl = new Exercise ({
@@ -291,7 +301,7 @@ const ezBarCurl = new Exercise ({
   musclegroup: "Upper",
   reps: "3x12",
   equipment: "Gym",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=zG2xJ0Q5QtI",
   selected: 0
 });
 const dumbellCurl = new Exercise ({
@@ -301,7 +311,7 @@ const dumbellCurl = new Exercise ({
   musclegroup: "Cardio",
   reps: "3x20",
   equipment: "Gym",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=sAq_ocpRh_I",
   selected: 0
 });
 const hammerCurl = new Exercise ({
@@ -311,7 +321,7 @@ const hammerCurl = new Exercise ({
   musclegroup: "Upper",
   reps: "3x20",
   equipment: "Gym",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=EdWCF9-ZAJI",
   selected: 0
 });
 const crossbodyCurl = new Exercise ({
@@ -321,7 +331,7 @@ const crossbodyCurl = new Exercise ({
   musclegroup: "Cardio",
   reps: "3x60s",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=n4J53LpjvUk",
   selected: 0
 });
 const tricepPushdown = new Exercise ({
@@ -331,7 +341,7 @@ const tricepPushdown = new Exercise ({
   musclegroup: "Upper",
   reps: "3x30",
   equipment: "Gym",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=HIKzvHkibWc",
   selected: 0
 });
 const lyingTricepExtension = new Exercise ({
@@ -341,7 +351,7 @@ const lyingTricepExtension = new Exercise ({
   musclegroup: "Upper",
   reps: "3x12",
   equipment: "Gym",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=MO_03opCc0g",
   selected: 0
 });
 const hangClean = new Exercise ({
@@ -351,7 +361,7 @@ const hangClean = new Exercise ({
   musclegroup: "Upper",
   reps: "3x15",
   equipment: "Gym",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=TjTEOme9fvw",
   selected: 0
 });
 const bentoverLateralRaise = new Exercise ({
@@ -361,7 +371,7 @@ const bentoverLateralRaise = new Exercise ({
   musclegroup: "Cardio",
   reps: "3x60s",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=SWjzFaH9QXA",
   selected: 0
 });
 const inclineYTW = new Exercise ({
@@ -371,7 +381,7 @@ const inclineYTW = new Exercise ({
   musclegroup: "Upper",
   reps: "3x15",
   equipment: "Gym",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=3g4EziPTjxI",
   selected: 0
 });
 const shrug = new Exercise ({
@@ -381,7 +391,7 @@ const shrug = new Exercise ({
   musclegroup: "Cardio",
   reps: "3x60s",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=8lP_eJvClSA",
   selected: 0
 });
 const closegripDumbbellPress = new Exercise ({
@@ -391,7 +401,7 @@ const closegripDumbbellPress = new Exercise ({
   musclegroup: "Upper",
   reps: "3x12",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=cefsgoFQNNA",
   selected: 0
 });
 const splitSquats = new Exercise ({
@@ -401,7 +411,7 @@ const splitSquats = new Exercise ({
   musclegroup: "Lower",
   reps: "3x12",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=SGHnCftrZkA",
   selected: 0
 });
 const seatedShoulderPress = new Exercise ({
@@ -411,7 +421,7 @@ const seatedShoulderPress = new Exercise ({
   musclegroup: "Upper",
   reps: "3x12",
   equipment: "Gym",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=oBGeXxnigsQ",
   selected: 0
 });
 const hipThrusts = new Exercise ({
@@ -421,7 +431,7 @@ const hipThrusts = new Exercise ({
   musclegroup: "Lower",
   reps: "3x20",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=Zp26q4BY5HE",
   selected: 0
 });
 const dumbbellDeadlift = new Exercise ({
@@ -431,7 +441,7 @@ const dumbbellDeadlift = new Exercise ({
   musclegroup: "Lower",
   reps: "3x10",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=JNpUNRPQkAk",
   selected: 0
 });
 const stepups = new Exercise ({
@@ -441,7 +451,7 @@ const stepups = new Exercise ({
   musclegroup: "Lower",
   reps: "3x12",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=dG75KOf4EtY",
   selected: 0
 });
 const seatedBicepCurl = new Exercise ({
@@ -451,7 +461,7 @@ const seatedBicepCurl = new Exercise ({
   musclegroup: "Upper",
   reps: "3x12",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=zs618MVIsG4",
   selected: 0
 });
 const lateralPulldown = new Exercise ({
@@ -461,7 +471,7 @@ const lateralPulldown = new Exercise ({
   musclegroup: "Upper",
   reps: "3x15",
   equipment: "Gym",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=AOpi-p0cJkc",
   selected: 0
 });
 const legCurl = new Exercise ({
@@ -471,7 +481,7 @@ const legCurl = new Exercise ({
   musclegroup: "Lower",
   reps: "3x12",
   equipment: "Gym",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=t9sTSr-JYSs",
   selected: 0
 });
 const seatedCableRow = new Exercise ({
@@ -481,7 +491,7 @@ const seatedCableRow = new Exercise ({
   musclegroup: "Upper",
   reps: "3x20",
   equipment: "Gym",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=IzoCF_b3cIY",
   selected: 0
 });
 const legPress = new Exercise ({
@@ -491,7 +501,7 @@ const legPress = new Exercise ({
   musclegroup: "Lower",
   reps: "3x16",
   equipment: "Gym",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=Aq5uxXrXq7c",
   selected: 0
 });
 const romanianDeadlift = new Exercise ({
@@ -501,7 +511,7 @@ const romanianDeadlift = new Exercise ({
   musclegroup: "Lower",
   reps: "3x8",
   equipment: "Gym",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=2SHsk9AzdjA",
   selected: 0
 });
 const overheadTricepExtension = new Exercise ({
@@ -511,7 +521,7 @@ const overheadTricepExtension = new Exercise ({
   musclegroup: "Upper",
   reps: "3x14",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=9wxRhONFsRA",
   selected: 0
 });
 const cableCrossover = new Exercise ({
@@ -521,7 +531,7 @@ const cableCrossover = new Exercise ({
   musclegroup: "Cardio",
   reps: "3x16",
   equipment: "Gym",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=taI4XduLpTk",
   selected: 0
 });
 const floorPress = new Exercise ({
@@ -531,7 +541,7 @@ const floorPress = new Exercise ({
   musclegroup: "Upper",
   reps: "3x12",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=uUGDRwge4F8",
   selected: 0
 });
 const landminePress = new Exercise ({
@@ -541,7 +551,7 @@ const landminePress = new Exercise ({
   musclegroup: "Upper",
   reps: "3x12",
   equipment: "Gym",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=gygpFvx_O3k",
   selected: 0
 });
 const lyingHamstringCurl = new Exercise ({
@@ -551,7 +561,7 @@ const lyingHamstringCurl = new Exercise ({
   musclegroup: "Lower",
   reps: "3x12s",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=65vwYKNxUJs",
   selected: 0
 });
 const hackSquats = new Exercise ({
@@ -561,7 +571,7 @@ const hackSquats = new Exercise ({
   musclegroup: "Lower",
   reps: "3x12",
   equipment: "Gym",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=0tn5K9NlCfo",
   selected: 0
 });
 const dumbbellRDLShrug = new Exercise ({
@@ -571,7 +581,7 @@ const dumbbellRDLShrug = new Exercise ({
   musclegroup: "Upper",
   reps: "3x12",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=7nMOPQns_4c",
   selected: 0
 });
 const kneelingPushups = new Exercise ({
@@ -581,7 +591,7 @@ const kneelingPushups = new Exercise ({
   musclegroup: "Upper",
   reps: "3x16",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=utzhPQuXWcA",
   selected: 0
 });
 const runningSprint = new Exercise ({
@@ -591,7 +601,7 @@ const runningSprint = new Exercise ({
   musclegroup: "Cardio",
   reps: "5x10s",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=kQfXgIAcl0M",
   selected: 0
 });
 const walk = new Exercise ({
@@ -599,24 +609,32 @@ const walk = new Exercise ({
   description: "...",
   picture: "walk.png",
   musclegroup: "Cardio",
-  reps: "3x15m",
+  reps: "1x15m",
   equipment: "Home",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=945GB6r2o_Y",
   selected: 0
 });
-const cableWoodchop= new Exercise ({
+const cableWoodchop = new Exercise ({
   name: "Cable Woodchop",
-  description: "tand to the left of a high cable machine and hold the handle with both hands, arms straight. Step your right foot one to two feet in front of your left, knees slightly bent. Keeping your arms straight and eyes on your hands, pull the handle down and across your body until it's outside your left leg.",
+  description: "Stand to the left of a high cable machine and hold the handle with both hands, arms straight. Step your right foot one to two feet in front of your left, knees slightly bent. Keeping your arms straight and eyes on your hands, pull the handle down and across your body until it's outside your left leg.",
   picture: "cableWoodchop.png",
   musclegroup: "Upper",
   reps: "3x16",
   equipment: "Gym",
-  embedded: "",
+  embedded: "https://www.youtube.com/watch?v=ZDt4MCvjMAA",
   selected: 0
 });
-
-
-Exercise.insertMany([benchPress, barbellBackSquat, deadLift, barbellJammers, lunges, starJumps, russianTwists, pushups, pullups, chinups, situps, planks, miniHops, shoulderTaps, sidePlank, handReleasePushups, declinePushups, vups, gobletSquats, halos, lateralRaise, chestPress, bicepCurl, pushPress, inclineBenchPress, bentoverRow, oneArmRow, ezBarCurl, dumbbellCurl, hammerCurl, crossbodyCurl, tricepPushdown, lyingTricepExtension, hangClean, bentoverLateralRaise, inclineTW, shrug, closegripDumbbellPress, splitSquats, seatedShoulderPress, hipThrust, dumbbellDeadlift, stepups, seatedBicepCurl, lateralPulldown, legPress, romanianDeadlift, overheadTricepExtension, cableCrossoverm, floorPress, landminePress, lyingHamstringCurl, hackSquats, dumbbellRDLShrug, kneelingPushups, runningSprint walk, cableWoodchop], function(err){
+const inclinePushups = new Exercise({
+  name: "Incline Pushups",
+  description: "The key to incline pushups is to make sure that your body is in a straight line while you’re in plank position. One common mistake is setting yourself up too close to the box, which can cause your back to arch. ",
+  picture: "inclinePushups.png",
+  musclegroup: "Upper",
+  reps: "3x20",
+  equipment: "Home",
+  embedded: "https://www.youtube.com/watch?v=Z0bRiVhnO8Q",
+  selected: 0
+});
+Exercise.insertMany([benchPress, barbellBackSquat, deadLift, barbellJammers, lunges, starJumps, russianTwists, pushups, pullups, chinups, situps, planks, miniHops, shoulderTaps, sidePlank, handReleasePushups, declinePushups, vups, gobletSquats, halos, lateralRaise, chestPress, bicepCurl, pushPress, inclineBenchPress, bentoverRow, oneArmRow, ezBarCurl, dumbbellCurl, hammerCurl, crossbodyCurl, tricepPushdown, lyingTricepExtension, hangClean, bentoverLateralRaise, inclineTW, shrug, closegripDumbbellPress, splitSquats, seatedShoulderPress, hipThrust, dumbbellDeadlift, stepups, seatedBicepCurl, lateralPulldown, legPress, romanianDeadlift, overheadTricepExtension, cableCrossoverm, floorPress, landminePress, lyingHamstringCurl, hackSquats, dumbbellRDLShrug, kneelingPushups, runningSprint walk, cableWoodchop, inclinePushups], function(err){
   if(err){
     console.log(err);
   }else {
