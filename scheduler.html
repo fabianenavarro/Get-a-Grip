@@ -54,10 +54,7 @@
         <div class="container-fluid main-text">
           <!-- column that is large or desktop sized takes 6 units or half the space, anything smaller takes full width -->
           <h1 class="big-heading">Scheduler</h1>
-
-
         </div>
-
       </div>
 
       <!-- selector -->
@@ -65,7 +62,7 @@
 
         <div class="col-lg-3 d-flex align-items-stretch">
 
-          <div class="card w-100 mb-4 rounded-3 shadow-sm filter">
+          <div onClick="applyIntensity()" style="cursor: pointer;" class="card w-100 mb-4 rounded-3 shadow-sm filter">
             <div class="card-heading py-1">
               <h2 class="normal-heading">Muscle</h2>
             </div>
@@ -77,7 +74,7 @@
         </div>
         <div class="col-lg-3 d-flex align-items-stretch">
 
-          <div class="card w-100 mb-4 rounded-3 shadow-sm filter">
+          <div onClick="applyIntensity()" style="cursor: pointer;" class="card w-100 mb-4 rounded-3 shadow-sm filter">
             <div class="card-heading py-1">
               <h2 class="normal-heading">Tone</h2>
             </div>
@@ -90,7 +87,7 @@
         </div>
         <div class="col-lg-3 d-flex align-items-stretch">
 
-          <div class="card w-100 mb-4 rounded-3 shadow-sm filter">
+          <div onClick="applyIntensity()" style="cursor: pointer;" class="card w-100 mb-4 rounded-3 shadow-sm filter">
             <div class="card-heading py-1">
               <h2 class="normal-heading">Intense</h2>
             </div>
@@ -102,7 +99,7 @@
         </div>
         <div class="col-lg-3 d-flex align-items-stretch">
 
-          <div class="card w-100 mb-4 rounded-3 shadow-sm filter">
+          <div onClick="applyIntensity()" style="cursor: pointer;" class="card w-100 mb-4 rounded-3 shadow-sm filter">
             <div class="card-heading py-1">
               <h2 class="normal-heading">Moderate</h2>
             </div>
@@ -120,25 +117,7 @@
   </section>
   <section id="dashboard">
     <!-- customizer -->
-    <!-- <div class="container-fluid">
-      <div class="row">
-        <div class="col-sm-1 sidebar-sticky"> -->
-    <!-- <div class="sidebar-sticky"> -->
-    <!-- <i class="icon fas fa-trash fa-2x"></i> -->
-    <!-- </div> -->
-    <!-- </div>
-        <div class="col">
-          <div class="exercises">
-            <h1>Exercises</h1>
-          </div>
-        </div>
-        <div class="col">
-          <div class="repetitions">
-            <h1>Mode</h1>
-          </div>
-        </div>
-      </div>
-    </div> -->
+
     <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
       <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">GETTA GRIP!</a>
 
@@ -152,13 +131,13 @@
       <div class="row">
 
 
-        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mx-4">
           <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
             <h1 class="h2">Dashboard</h1>
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group me-2">
-                <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+                <button name="shareButton" type="submit" class="btn btn-sm btn-outline-secondary exercise-icon">Share</button>
+                <button name="exportButton" type="submit" class= "btn btn-sm btn-outline-secondary exercise-icon">Export</button>
               </div>
 
             </div>
@@ -169,29 +148,30 @@
             <div class="col-md-5 col-lg-4 order-md-last">
               <h4 class="d-flex justify-content-between align-items-left mb-3">
                 <span class=>Your Exercises</span>
-                <span class="badge bg-primary rounded-pill">3</span>
+                <span name="exerciseCounter"class="badge bg-primary rounded-pill">#</span>
               </h4>
+
               <ul class="list-group mb-3">
                 <li class="list-group-item d-flex justify-content-between lh-sm">
                   <div>
-                    <h6 class="my-0">Bent-Over Rows</h6>
-                    <small class="text-muted">3 Sets of 10</small>
+                    <h6 name="name" class="my-0">Name</h6>
+                    <small name="repetitions"class="text-muted"># Sets of #</small>
                   </div>
-                  <i class="icon fas fa-trash fa-1x"></i>
+                  <button class="trash"><i class="icon fas fa-trash fa-1x"></i></button>
                 </li>
                 <li class="list-group-item d-flex justify-content-between lh-sm">
                   <div>
-                    <h6 class="my-0">Incline Bench Press</h6>
-                    <small class="text-muted">4 Sets of 12</small>
+                    <h6 name="name" class="my-0">Name</h6>
+                    <small name="repetitions" class="text-muted"># Sets of #</small>
                   </div>
-                  <i class="icon fas fa-trash fa-1x"></i>
+                  <button class="trash"><i class="icon fas fa-trash fa-1x"></i></button>
                 </li>
                 <li class="list-group-item d-flex justify-content-between lh-sm">
                   <div>
-                    <h6 class="my-0">Push Ups</h6>
-                    <small class="text-muted">4 Sets of 10</small>
+                    <h6 name="name" class="my-0">Name</h6>
+                    <small name="repetitions" class="text-muted"># Sets of #</small>
                   </div>
-                  <i class="icon fas fa-trash fa-1x"></i>
+                  <button class="trash"><i class="icon fas fa-trash fa-1x"></i></button>
                 </li>
 
 
@@ -200,17 +180,17 @@
               <form class="card p-2">
                 <div class="input-group">
                   <input type="text" class="form-control" placeholder="Miss an Exercise?">
-                  <button type="submit" class="btn btn-secondary">Add</button>
+                  <button type="submit" class="btn btn-secondary exercise-icon">Add</button>
                 </div>
               </form>
             </div>
             <div class="col-md-7 col-lg-8">
-              <h4 class="mb-3">Bent-Over Rows</h4>
+              <h4 name="name" class="mb-3">Name</h4>
               <form class="needs-validation" novalidate>
                 <div class="row g-3">
                   <div class="col-sm-6">
                     <label for="sets" class="form-label">Sets</label>
-                    <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
+                    <input name="sets" type="text" class="form-control" id="numSets" placeholder="" value="" required>
                     <div class="invalid-feedback">
                       Enter a Valid Number for Sets.
                     </div>
@@ -218,7 +198,7 @@
 
                   <div class="col-sm-6">
                     <label for="reps" class="form-label">Reps</label>
-                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+                    <input name="reps" type="text" class="form-control" id="numReps" placeholder="" value="" required>
                     <div class="invalid-feedback">
                       Enter a Valid Number for Repetitions.
                     </div>
