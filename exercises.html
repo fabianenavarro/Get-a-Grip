@@ -59,10 +59,12 @@
         </div>
       </div>
       <!-- selector -->
+      <h2 class="normal-heading mb-4">Group</h2>
       <div class="container-fluid row row-cols-1 row-cols-md-3 mb-3 text-center">
+
         <div id="select1" class="col-lg-4 d-flex align-items-stretch">
 
-          <div class="card w-100 mb-4 rounded-3 shadow-sm filter">
+          <div onClick="applyEquipment()"  style="cursor: pointer;" class="card w-100 mb-4 rounded-3 shadow-sm filter">
             <div class="card-heading py-1">
               <h1 class="normal-heading">Gym</h1>
             </div>
@@ -75,7 +77,7 @@
         </div>
         <div id="select2" class="col-lg-4 d-flex align-items-stretch">
 
-          <div class="card w-100 mb-4 rounded-3 shadow-sm filter">
+          <div onClick="applyEquipment()" style="cursor: pointer;" class="card w-100 mb-4 rounded-3 shadow-sm filter">
             <div class="card-heading py-1">
               <h1 class="normal-heading">Limited</h1>
             </div>
@@ -88,7 +90,7 @@
         </div>
         <div id="select3" class="col-lg-4 d-flex align-items-stretch">
 
-          <div class="card w-100 mb-4 rounded-3 shadow-sm filter">
+          <div onClick="applyEquipment()" style="cursor: pointer;" class="card w-100 mb-4 rounded-3 shadow-sm filter">
             <div class="card-heading py-1">
               <h1 class="normal-heading">At Home</h1>
             </div>
@@ -102,20 +104,21 @@
       </div>
 
       <!--selector2-->
+      <h2 class="normal-heading mb-4">Equipment</h2>
       <div class="container-fluid row row-cols-1 row-cols-md-3 mb-3 text-center">
         <div id="select4" class="col-lg-4 d-flex align-items-stretch">
 
-          <div class="card w-100 mb-4 rounded-3 shadow-sm filter">
-            <div class="card-body">
-              <h1 class="normal-heading">Upper Body</h1>
-              <p>Includes the chest, arms, shoulders, and anything else above the waist.</p>
+            <div onClick="applyType()" style="cursor: pointer;" class="card w-100 mb-4 rounded-3 shadow-sm filter">
+              <div class="card-body">
+                <h1 class="normal-heading">Upper Body</h1>
+                <p>Includes the chest, arms, shoulders, and anything else above the waist.</p>
+              </div>
             </div>
-          </div>
 
         </div>
         <div id="select5" class="col-lg-4 d-flex align-items-stretch">
 
-          <div class="card w-100 mb-4 rounded-3 shadow-sm filter">
+          <div onClick="applyType()" style="cursor: pointer;" class="card w-100 mb-4 rounded-3 shadow-sm filter">
             <div class="card-body">
               <h1 class="normal-heading">Lower Body</h1>
               <p>Includes the quadriceps, hamstrings, glutes, and anything else below the waist.</p>
@@ -125,7 +128,7 @@
         </div>
         <div id="select6" class="col-lg-4 d-flex align-items-stretch">
 
-          <div class="card w-100 mb-4 rounded-3 shadow-sm filter">
+          <div onClick="applyType()" style="cursor: pointer;" class="card w-100 mb-4 rounded-3 shadow-sm filter">
             <div class="card-body">
               <h1 class="normal-heading">Cardio</h1>
               <p>Any exercise that benefits the cardio-system that gets the heart pumpin'.</p>
@@ -147,6 +150,28 @@
       <div class="container">
 
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+          <div class="col">
+            <div class="card shadow-sm">
+
+              <div class="image-holder"> <img name="picture" src="public/images/name.png"" class="img-fluid"></div>
+              <div class="card-body">
+                <p name="name" class="card-text">name</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button name="addWorkout" type="submit" class=" btn btn-sm btn-outline-secondary exercise-icon">Add</button>
+                    <button name="toggleDescription" type="button" class="btn btn-sm btn-outline-secondary exercise-icon" onclick="toggleDescription()">Description</button>
+                  </div>
+                  <div class="filter-group">
+                    <small name="musclegroup" class="text-muted"> musclegroup | </small>
+                    <small name="equipment" class=text-muted> equipment </small>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
 
           <div class="col">
             <div class="card shadow-sm">
@@ -173,7 +198,9 @@
           <div class="col">
             <div class="card shadow-sm">
 
-              <div class="image-holder"> <img name="picture" src="public/images/back-squat-form-tips.jpg" class="img-fluid"></div>
+
+              <div class="image-holder"> <img name="picture" src="public/images/name.png" class="img-fluid"></div>
+
               <div class="card-body">
                 <p name="name" class="card-text">name</p>
                 <div class="d-flex justify-content-between align-items-center">
@@ -195,31 +222,7 @@
           <div class="col">
             <div class="card shadow-sm">
 
-
-              <div class="image-holder"> <img name="picture" src="public/images/Untitled.png" class="img-fluid"></div>
-
-              <div class="card-body">
-                <p name="name" class="card-text">name</p>
-                <div class="d-flex justify-content-between align-items-center">
-                  <div class="btn-group">
-                    <button name="addWorkout" type="submit" class=" btn btn-sm btn-outline-secondary exercise-icon">Add</button>
-<button name="toggleDescription" type="button" class="btn btn-sm btn-outline-secondary exercise-icon" onclick="toggleDescription()">Description</button>
-                  </div>
-                  <div class="filter-group">
-                    <small name="musclegroup" class="text-muted"> musclegroup | </small>
-                    <small name="equipment" class=text-muted> equipment </small>
-                  </div>
-
-                </div>
-              </div>
-
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card shadow-sm">
-
-              <div class="image-holder"> <img name="picture" src="public/images/back-squat-form-tips.jpg" class="img-fluid"></div>
+              <div class="image-holder"> <img name="picture" src="public/images/name.png" class="img-fluid"></div>
               <div class="card-body">
                 <p name="name" class="card-text">name</p>
                 <div class="d-flex justify-content-between align-items-center">
@@ -241,7 +244,7 @@
           <div class="col">
             <div class="card shadow-sm">
 
-              <div class="image-holder"> <img name="picture" src="public/images/back-squat-form-tips.jpg" class="img-fluid"></div>
+              <div class="image-holder"> <img name="picture" src="public/images/name.png" class="img-fluid"></div>
               <div class="card-body">
                 <p name="name" class="card-text">name</p>
                 <div class="d-flex justify-content-between align-items-center">
@@ -263,7 +266,7 @@
           <div class="col">
             <div class="card shadow-sm">
 
-              <div class="image-holder"> <img name="picture" src="public/images/back-squat-form-tips.jpg" class="img-fluid"></div>
+              <div class="image-holder"> <img name="picture" src="public/images/name.png" class="img-fluid"></div>
               <div class="card-body">
                 <p name="name" class="card-text">name</p>
                 <div class="d-flex justify-content-between align-items-center">
@@ -285,7 +288,7 @@
           <div class="col">
             <div class="card shadow-sm">
 
-              <div class="image-holder"> <img name="picture" src="public/images/back-squat-form-tips.jpg" class="img-fluid"></div>
+              <div class="image-holder"> <img name="picture" src="public/images/name.png" class="img-fluid"></div>
               <div class="card-body">
                 <p name="name" class="card-text">name</p>
                 <div class="d-flex justify-content-between align-items-center">
@@ -307,7 +310,7 @@
           <div class="col">
             <div class="card shadow-sm">
 
-              <div class="image-holder"> <img name="picture" src="public/images/back-squat-form-tips.jpg" class="img-fluid"></div>
+              <div class="image-holder"> <img name="picture" src="public/images/name.png" class="img-fluid"></div>
               <div class="card-body">
                 <p name="name" class="card-text">name</p>
                 <div class="d-flex justify-content-between align-items-center">
@@ -329,7 +332,7 @@
           <div class="col">
             <div class="card shadow-sm">
 
-              <div class="image-holder"> <img name="picture" src="public/images/back-squat-form-tips.jpg" class="img-fluid"></div>
+              <div class="image-holder"> <img name="picture" src="public/images/name.png" class="img-fluid"></div>
               <div class="card-body">
                 <p name="name" class="card-text">name</p>
                 <div class="d-flex justify-content-between align-items-center">
@@ -350,7 +353,7 @@
           <div class="col">
             <div class="card shadow-sm">
 
-              <div class="image-holder"> <img name="picture" src="public/images/back-squat-form-tips.jpg" class="img-fluid"></div>
+              <div class="image-holder"> <img name="picture" src="public/images/name.png" class="img-fluid"></div>
               <div class="card-body">
                 <p name="name" class="card-text">name</p>
                 <div class="d-flex justify-content-between align-items-center">
@@ -371,7 +374,7 @@
           <div class="col">
             <div class="card shadow-sm">
 
-              <div class="image-holder"> <img name="picture" src="public/images/back-squat-form-tips.jpg" class="img-fluid"></div>
+              <div class="image-holder"> <img name="picture" src="public/images/name.png" class="img-fluid"></div>
               <div class="card-body">
                 <p name="name" class="card-text">name</p>
                 <div class="d-flex justify-content-between align-items-center">
@@ -392,7 +395,7 @@
           <div class="col">
             <div class="card shadow-sm">
 
-              <div class="image-holder"> <img name="picture" src="public/images/back-squat-form-tips.jpg" class="img-fluid"></div>
+              <div class="image-holder"> <img name="picture" src="public/images/name.png" class="img-fluid"></div>
               <div class="card-body">
                 <p name="name" class="card-text">name</p>
                 <div class="d-flex justify-content-between align-items-center">
@@ -443,7 +446,12 @@
   </footer>
 
 
-
+  <script>
+    function toggleDescription() {
+      let x = document.getElementsByTagName("picture").classList.add("image-blur");
+      console.log(x);
+    }
+  </script>
 </body>
 
 </html>
