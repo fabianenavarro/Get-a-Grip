@@ -58,7 +58,7 @@
       </div>
 
       <!-- selector -->
-      <div class="container-fluid row row-cols-1 row-cols-md-2 mb-3 text-center">
+      <div class="container-fluid row row-cols-1 row-cols-md-2 mb-3 text-center" style="margin: auto">
 
         <div class="col-lg-3 d-flex align-items-stretch">
 
@@ -137,7 +137,7 @@
             <div class="btn-toolbar mb-2 mb-md-0">
               <div class="btn-group me-2">
                 <button name="shareButton" type="submit" class="btn btn-sm btn-outline-secondary exercise-icon">Share</button>
-                <button name="exportButton" type="submit" class= "btn btn-sm btn-outline-secondary exercise-icon">Export</button>
+                <button name="exportButton" type="submit" class="btn btn-sm btn-outline-secondary exercise-icon">Export</button>
               </div>
 
             </div>
@@ -148,25 +148,25 @@
             <div class="col-md-5 col-lg-4 order-md-last">
               <h4 class="d-flex justify-content-between align-items-left mb-3">
                 <span class=>Your Exercises</span>
-                <span name="exerciseCounter"class="badge bg-primary rounded-pill">#</span>
+                <span name="exerciseCounter" class="badge bg-primary rounded-pill">#</span>
               </h4>
 
-              <ul class="list-group mb-3">
-                <li class="list-group-item d-flex justify-content-between lh-sm">
-                  <div>
-                    <h6 name="name" class="my-0">Name</h6>
-                    <small name="repetitions"class="text-muted"># Sets of #</small>
-                  </div>
-                  <button class="trash"><i class="icon fas fa-trash fa-1x"></i></button>
-                </li>
-                <li class="list-group-item d-flex justify-content-between lh-sm">
+              <ul data-tag="channelList" id="theList" class="list-group mb-3">
+                <li style="cursor:pointer" onclick="switchChannel(this)" class="list-group-item d-flex justify-content-between lh-sm selected">
                   <div>
                     <h6 name="name" class="my-0">Name</h6>
                     <small name="repetitions" class="text-muted"># Sets of #</small>
                   </div>
                   <button class="trash"><i class="icon fas fa-trash fa-1x"></i></button>
                 </li>
-                <li class="list-group-item d-flex justify-content-between lh-sm">
+                <li style="cursor:pointer" onclick="switchChannel(this)" class="list-group-item d-flex justify-content-between lh-sm">
+                  <div>
+                    <h6 name="name" class="my-0">Name</h6>
+                    <small name="repetitions" class="text-muted"># Sets of #</small>
+                  </div>
+                  <button class="trash"><i class="icon fas fa-trash fa-1x"></i></button>
+                </li>
+                <li style="cursor:pointer" onclick="switchChannel(this)" class="list-group-item d-flex justify-content-between lh-sm">
                   <div>
                     <h6 name="name" class="my-0">Name</h6>
                     <small name="repetitions" class="text-muted"># Sets of #</small>
@@ -203,7 +203,7 @@
                       Enter a Valid Number for Repetitions.
                     </div>
                   </div>
-                <button name="button" type="submit" class="btn btn-secondary">Finalize</button>
+                  <button name="button" type="submit" class="btn btn-secondary">Finalize</button>
                 </div>
               </form>
             </div>
@@ -225,3 +225,9 @@
 
     </div>
   </footer>
+
+
+  <script src="test.js" charset="utf-8"></script>
+</body>
+
+</html>
