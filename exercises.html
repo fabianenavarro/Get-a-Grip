@@ -60,11 +60,11 @@
       </div>
       <!-- selector -->
       <h2 class="normal-heading mb-4">Group</h2>
-      <div class="container-fluid row row-cols-1 row-cols-md-3 mb-3 text-center">
+      <div class="container-fluid row row-cols-1 row-cols-md-3 mb-3 text-center" style="margin: auto">
 
         <div id="select1" class="col-lg-4 d-flex align-items-stretch">
 
-          <div onClick="applyEquipment()"  style="cursor: pointer;" class="card w-100 mb-4 rounded-3 shadow-sm filter">
+          <div onClick="applyEquipment()" style="cursor: pointer;" class="card w-100 mb-4 rounded-3 shadow-sm filter">
             <div class="card-heading py-1">
               <h1 class="normal-heading">Gym</h1>
             </div>
@@ -105,15 +105,15 @@
 
       <!--selector2-->
       <h2 class="normal-heading mb-4">Equipment</h2>
-      <div class="container-fluid row row-cols-1 row-cols-md-3 mb-3 text-center">
+      <div class="container-fluid row row-cols-1 row-cols-md-3 mb-3 text-center" style="margin: auto">
         <div id="select4" class="col-lg-4 d-flex align-items-stretch">
 
-            <div onClick="applyType()" style="cursor: pointer;" class="card w-100 mb-4 rounded-3 shadow-sm filter">
-              <div class="card-body">
-                <h1 class="normal-heading">Upper Body</h1>
-                <p>Includes the chest, arms, shoulders, and anything else above the waist.</p>
-              </div>
+          <div onClick="applyType()" style="cursor: pointer;" class="card w-100 mb-4 rounded-3 shadow-sm filter">
+            <div class="card-body">
+              <h1 class="normal-heading">Upper Body</h1>
+              <p>Includes the chest, arms, shoulders, and anything else above the waist.</p>
             </div>
+          </div>
 
         </div>
         <div id="select5" class="col-lg-4 d-flex align-items-stretch">
@@ -149,18 +149,44 @@
     <div class="album py-5 black-section">
       <div class="container">
 
+        <!-- popup boy -->
+        <div class="popuptext" id="myPopup"  style="z-index: 1003; display: block; opacity: 1; transform: translateY(0%); top: 10%;" >
+          <div id="third" class="card text-center border-success" style="z-index: 1002; display: none; opacity: 0.5;">
+            <div class="card-header border-sucess">
+              <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="true" href="#">Exercise</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Video Link</a>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Workout Name</h5>
+              <p class="card-text">Description.</p>
+              <img src="" alt="">
+              <div class="button-holder">
+                <button name="addWorkout" type="submit" class="btn btn-sm btn-outline-secondary exercise-icon mx-3">Add</button>
+                <button id="exit" type="toggle" class="btn btn-sm btn-outline-secondary exercise-icon mx-3">Exit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- popup boy -->
+
         <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
           <div class="col">
             <div class="card shadow-sm">
 
-              <div class="image-holder"> <img name="picture" src="public/images/name.png"" class="img-fluid"></div>
+              <div class="image-holder"> <img name="picture" src="public/images/name.png" class="img-fluid"></div>
               <div class="card-body">
                 <p name="name" class="card-text">name</p>
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button name="addWorkout" type="submit" class=" btn btn-sm btn-outline-secondary exercise-icon">Add</button>
-                    <button name="toggleDescription" type="button" class="btn btn-sm btn-outline-secondary exercise-icon" onclick="toggleDescription()">Description</button>
+                    <button id="toggle" type="button" class="btn btn-sm btn-outline-secondary exercise-icon popup" onclick="myFunction()">Description</button>
                   </div>
                   <div class="filter-group">
                     <small name="musclegroup" class="text-muted"> musclegroup | </small>
@@ -446,10 +472,19 @@
   </footer>
 
 
-  <script>
-    function toggleDescription() {
-      let x = document.getElementsByTagName("picture").classList.add("image-blur");
-      console.log(x);
+  <script type="text/javascript">
+    const targetDiv = document.getElementById("third");
+    const btn = document.getElementById("toggle");
+    const exitBtn = document.getElementById("exit")
+    btn.onclick = function() {
+      if (targetDiv.style.display !== "none") {
+        targetDiv.style.display = "none";
+      } else {
+        targetDiv.style.display = "block";
+      }
+    };
+    exitBtn.onClick = function() {
+      targetDiv.style.display = "none";
     }
   </script>
 </body>
