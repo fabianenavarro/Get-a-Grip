@@ -7,32 +7,23 @@ const app = express();
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const mongoose = require('mongoose')
 //"mongoddb+srv://Username:Password@gettagrip..."
-//Usernames for Tommy, Fabian and Jose are [tommy, fabian, jose] 
+//Usernames for Tommy, Fabian and Jose are [tommy, fabian, jose]
 //Passwords are the same                   [tommy, fabian, jose]
 
-//const uri = "mongodb+srv://tommy:tommy@gettagrip.3ilws.mongodb.net/exercises?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-client.connect(err => {
-  const collection = client.db("test").collection("devices");
-  // perform actions on the collection object
-  client.close();
-});
-
-
+// const uri = "mongodb+srv://tommy:tommy@gettagrip.3ilws.mongodb.net/exercises?retryWrites=true&w=majority";
+// const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+// client.connect(err => {
+//   const collection = client.db("ggDB").collection("Exercise");
+//   // perform actions on the collection object
+//   client.close();
+// });
 app.set('view engine', 'ejs');
-//Hello when user tries to access / or home route
-app.get("/", function(req, res){
-  res.render("home");
-});
-//listen on port 3000, log that the server is running
-app.listen(3000, function(){
-  console.log("Server Running");
-})
+
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static("public"));
 
 
-
-
-mongoose.connect("mongodb://localhost:27017/ggDB", {useNewUrlParser: true});
+mongoose.connect("mongodb+srv://tommy:tommy@gettagrip.3ilws.mongodb.net/ggDB?retryWrites=true&w=majority", {useNewUrlParser: true});
 
 const ggSchema = new mongoose.Schema({
   name: {
@@ -50,6 +41,7 @@ const ggSchema = new mongoose.Schema({
 
 
 const Exercise = mongoose.model("Exercise", ggSchema);
+
 // new object template
 // const = new Exercise ({
 //   name: "",
@@ -324,10 +316,10 @@ const ezBarCurl = new Exercise ({
   embedded: "https://www.youtube.com/watch?v=zG2xJ0Q5QtI",
   selected: 0
 });
-const dumbellCurl = new Exercise ({
+const dumbbellCurl = new Exercise ({
   name: "Dumbbell Curl",
   description: "Stand or set an adjustable bench to a 45- to 60-degree incline and lie back against it with a dumbbell in each hand. Hold the weights with your palms facing up and a braced core. Then, keeping your upper arms vertical, curl the weights up.",
-  picture: "dumbellCurl.png",
+  picture: "dumbbellCurl.png",
   musclegroup: "Cardio",
   reps: "3x20",
   equipment: "Gym",
@@ -408,7 +400,7 @@ const shrug = new Exercise ({
   name: "Shrug",
   description: "Hold dumbbells at your sides and stand with feet shoulder width apart. Bend your hips back to squat down until the weights are knee level. Now explode upward and shrug hard at the top. Reset your feet before beginning the next rep.",
   picture: "shrug.png",
-  musclegroup: "Cardio",
+  musclegroup: "Upper",
   reps: "3x60s",
   equipment: "Home",
   embedded: "https://www.youtube.com/watch?v=8lP_eJvClSA",
@@ -654,13 +646,65 @@ const inclinePushups = new Exercise({
   embedded: "https://www.youtube.com/watch?v=Z0bRiVhnO8Q",
   selected: 0
 });
-Exercise.insertMany([benchPress, barbellBackSquat, deadLift, barbellJammers, lunges, starJumps, russianTwists, pushups, pullups, chinups, situps, planks, miniHops, shoulderTaps, sidePlank, handReleasePushups, declinePushups, vups, gobletSquats, halos, lateralRaise, chestPress, bicepCurl, pushPress, inclineBenchPress, bentoverRow, oneArmRow, ezBarCurl, dumbbellCurl, hammerCurl, crossbodyCurl, tricepPushdown, lyingTricepExtension, hangClean, bentoverLateralRaise, inclineTW, shrug, closegripDumbbellPress, splitSquats, seatedShoulderPress, hipThrust, dumbbellDeadlift, stepups, seatedBicepCurl, lateralPulldown, legPress, romanianDeadlift, overheadTricepExtension, cableCrossoverm, floorPress, landminePress, lyingHamstringCurl, hackSquats, dumbbellRDLShrug, kneelingPushups, runningSprint walk, cableWoodchop, inclinePushups], function(err){
-  if(err){
-    console.log(err);
-  }else {
-    console.log("Successful operation, insertion complete. ")
-  }
-})
+
+const defaults = [benchPress, barbellBackSquat, deadLift, lunges, starJumps, russianTwists, pushups, pullups, situps, planks, miniHops, shoulderTaps, sidePlank, handReleasePushups, declinePushups, vups, gobletSquats, halos, lateralRaise, chestPress, bicepCurl, pushPress, inclineBenchPress, bentoverRow, oneArmRow, ezBarCurl, dumbbellCurl, hammerCurl, crossbodyCurl, tricepPushdown, lyingTricepExtension, hangClean, bentoverLateralRaise, inclineYTW, shrug, closegripDumbbellPress, splitSquats, seatedShoulderPress, hipThrusts, dumbbellDeadlift, stepups, seatedBicepCurl, lateralPulldown, legPress, romanianDeadlift, overheadTricepExtension, cableCrossover, floorPress, landminePress, lyingHamstringCurl, hackSquats, dumbbellRDLShrug, kneelingPushups, runningSprint, walk, cableWoodchop, inclinePushups];
+
+
+//Hello when user tries to access / or home route
+app.get("/", function(req, res){
+
+
+    Exercise.find({}, function(err, foundExercises){
+        if (foundExercises.length === 0){
+          Exercise.insertMany(defaults, function(err){
+            if(err){
+              console.log(err);
+            } else {
+              console.log("Successful Insert Operation.");
+            }
+          });
+          res.redirect("/");
+        } else {
+          res.render("list", {listTitle: "", newListItems: foundExercises});
+        }
+    });
+  });
+
+// Add method with ways for name object retrieval
+  app.post("/", function(req, res){
+    const exerciseName = req.body.newExercise;
+
+    const exercise = new Exercise({
+      name: exerciseName
+    });
+
+    exercise.save();
+
+  });
+
+app.get("/exercises", function(req, res){
+  res.render("list", {listTitle: "", newListItems: exercisePItems});
+});
+
+app.get("/schedule", function(req, res){
+  res.render("list", {listTitle: "", newListItems: schedulePItems});
+});
+//listen on port 3000, log that the server is running
+app.listen(3000, function(){
+  console.log("Server Running");
+});
+
+
+//
+// <div class = "">
+//   <% for (let i = 0; i < newListItems.length; i++) { %>
+//     <div class="exerciseItems">
+//       <input type="">
+//       <p><%= newListItems[i].name %></p>
+//     </div>
+//     <%} %>
+
+
 
 
 Exercise.find(function(err, exercises){
