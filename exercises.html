@@ -20,6 +20,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;900&family=Roboto&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins&display=swap" rel="stylesheet">
+
+
 </head>
 
 
@@ -150,12 +152,13 @@
       <div class="container">
 
         <!-- popup boy -->
-        <div class="popuptext" id="myPopup"  style="z-index: 1003; display: block; opacity: 1; transform: translateY(0%); top: 10%;" >
-          <div id="third" class="card text-center border-success" style="z-index: 1002; display: none; opacity: 0.5;">
+        <div id="overlay"></div>
+        <div id="popup">
+          <div class="card text-center border-success popupcontent">
             <div class="card-header border-sucess">
               <ul class="nav nav-tabs card-header-tabs">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="true" href="#">Exercise</a>
+                  <a class="nav-link active" aria-current="true" href="#" >Exercise</a>
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">Video Link</a>
@@ -163,12 +166,12 @@
               </ul>
             </div>
             <div class="card-body">
-              <h5 class="card-title">Workout Name</h5>
+              <h5 class="card-title black-text">Workout Name</h5>
               <p class="card-text">Description.</p>
               <img src="" alt="">
-              <div class="button-holder">
+              <div class="button-holder popupcontrols">
                 <button name="addWorkout" type="submit" class="btn btn-sm btn-outline-secondary exercise-icon mx-3">Add</button>
-                <button id="exit" type="toggle" class="btn btn-sm btn-outline-secondary exercise-icon mx-3">Exit</button>
+                <button id="popupclose" type="toggle" class="btn btn-sm btn-outline-secondary exercise-icon mx-3">Exit</button>
               </div>
             </div>
           </div>
@@ -186,7 +189,7 @@
                 <div class="d-flex justify-content-between align-items-center">
                   <div class="btn-group">
                     <button name="addWorkout" type="submit" class=" btn btn-sm btn-outline-secondary exercise-icon">Add</button>
-                    <button id="toggle" type="button" class="btn btn-sm btn-outline-secondary exercise-icon popup" onclick="myFunction()">Description</button>
+                    <button  id="button" type="button" class="btn btn-sm btn-outline-secondary exercise-icon popup">Description</button>
                   </div>
                   <div class="filter-group">
                     <small name="musclegroup" class="text-muted"> musclegroup | </small>
@@ -471,22 +474,7 @@
     </div>
   </footer>
 
-
-  <script type="text/javascript">
-    const targetDiv = document.getElementById("third");
-    const btn = document.getElementById("toggle");
-    const exitBtn = document.getElementById("exit")
-    btn.onclick = function() {
-      if (targetDiv.style.display !== "none") {
-        targetDiv.style.display = "none";
-      } else {
-        targetDiv.style.display = "block";
-      }
-    };
-    exitBtn.onClick = function() {
-      targetDiv.style.display = "none";
-    }
-  </script>
+  <script src="test.js" charset="utf-8"></script>
 </body>
 
 </html>
