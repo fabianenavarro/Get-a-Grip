@@ -1,0 +1,230 @@
+<%- include("partials/header") -%>
+
+
+
+<body>
+
+  <section class="colored-section" id="title">
+    <div class="container-fluid">
+      <!-- Nav Bar -->
+      <div class="container-fluid">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+          <div class="logo-group">
+            <a class="navbar-brand getta-grip" href="main.ejs">Getta Grip!</a>
+            <a href="main.ejs"> <img class="logo" src="public/images/fist.png" alt=""></a>
+          </div>
+          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="main.ejs" class="nav-link px-2 link-dark">Home</a></li>
+            <li><a href="exercises.ejs" class="nav-link px-2 link-dark">Exercises</a></li>
+            <li><a href="scheduler.ejs" class="nav-link px-2 link-secondary">Scheduler</a></li>
+          </ul>
+
+          <!-- <div class="container-fluid">
+          <button type="button" class="btn btn-dark download-button">Login</button>
+          <button type="button" class="btn btn-outline-light download-button">Sign-up</button>
+        </div> -->
+        </header>
+      </div>
+
+
+      <!-- Title -->
+
+      <div class="row">
+        <div class="container-fluid main-text">
+          <!-- column that is large or desktop sized takes 6 units or half the space, anything smaller takes full width -->
+          <h1 class="big-heading">Scheduler</h1>
+        </div>
+      </div>
+
+      <!-- selector -->
+      <div class="container-fluid row row-cols-1 row-cols-md-2 mb-3 text-center" style="margin: auto">
+
+        <div class="col-lg-3 d-flex align-items-stretch">
+
+          <div onClick="applyIntensity()" style="cursor: pointer;" class="card w-100 mb-4 rounded-3 shadow-sm filter">
+            <div class="card-heading py-1">
+              <h2 class="normal-heading">Muscle</h2>
+            </div>
+            <div class="card-body">
+              <p>Focus on strength, size and muscle building with these exercies.</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-lg-3 d-flex align-items-stretch">
+
+          <div onClick="applyIntensity()" style="cursor: pointer;" class="card w-100 mb-4 rounded-3 shadow-sm filter">
+            <div class="card-heading py-1">
+              <h2 class="normal-heading">Tone</h2>
+            </div>
+            <div class="card-body">
+
+              <p>Use these exercises to sculpt your body by focusing on concentration.</p>
+            </div>
+          </div>
+
+        </div>
+        <div class="col-lg-3 d-flex align-items-stretch">
+
+          <div onClick="applyIntensity()" style="cursor: pointer;" class="card w-100 mb-4 rounded-3 shadow-sm filter">
+            <div class="card-heading py-1">
+              <h2 class="normal-heading">Intense</h2>
+            </div>
+            <div class="card-body">
+
+              <p>Push your body to the limit! Whether you want to by strength tarining or cardio.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-3 d-flex align-items-stretch">
+
+          <div onClick="applyIntensity()" style="cursor: pointer;" class="card w-100 mb-4 rounded-3 shadow-sm filter">
+            <div class="card-heading py-1">
+              <h2 class="normal-heading">Moderate</h2>
+            </div>
+            <div class="card-body">
+
+              <p>Take it easy, do what you need to do, while still maintaining a good workout.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+
+  </section>
+  <section id="dashboard">
+    <!-- customizer -->
+
+    <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">GETTA GRIP!</a>
+
+
+      <div class="navbar-nav">
+
+      </div>
+    </header>
+
+    <div class="container-fluid">
+      <div class="row">
+
+
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4 mx-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Dashboard</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group me-2">
+                <button name="shareButton" type="submit" class="btn btn-sm btn-outline-secondary exercise-icon">Share</button>
+                <button name="exportButton" type="submit" class="btn btn-sm btn-outline-secondary exercise-icon">Export</button>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="row g-5">
+
+            <div class="col-md-5 col-lg-4 order-md-last">
+              <h4 class="d-flex justify-content-between align-items-right mb-3">
+                <span class=>Your Exercises</span>
+              </h4>
+              <ul data-tag="channelList" id="exercise-list" class="list-group mb-3">
+                <li style="cursor:pointer" onclick="switchChannel(this)" class="list-group-item d-flex justify-content-between lh-sm selected">
+                  <div>
+                    <h6 name="name" class="my-0">Name</h6>
+                    <small name="repetitions" class="text-muted"># Sets of #</small>
+                  </div>
+                  <button class="trash"><i class="icon fas fa-trash fa-1x"></i></button>
+                </li>
+                <li style="cursor:pointer" onclick="switchChannel(this)" class="list-group-item d-flex justify-content-between lh-sm">
+                  <div>
+                    <h6 name="name" class="my-0">Name</h6>
+                    <small name="repetitions" class="text-muted"># Sets of #</small>
+                  </div>
+                  <button class="trash"><i class="icon fas fa-trash fa-1x"></i></button>
+                </li>
+                <li style="cursor:pointer" onclick="switchChannel(this)" class="list-group-item d-flex justify-content-between lh-sm">
+                  <div>
+                    <h6 name="name" class="my-0">Name</h6>
+                    <small name="repetitions" class="text-muted"># Sets of #</small>
+                  </div>
+                  <button class="trash"><i class="icon fas fa-trash fa-1x"></i></button>
+                </li>
+              </ul>
+            </div>
+            <!-- Workouts -->
+            <div class="col-md-7 col-lg-8">
+              <h4 class="d-flex justify-content-between align-items-left mb-3">
+                <span class=>Your Workouts</span>
+              </h4>
+              <div id="workout-list" class="g-3">
+                <form class="card p-2">
+                  <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Add an Exercise?">
+                    <button type="submit" class="btn btn-secondary exercise-icon">+</button>
+                  </div>
+                </form>
+                <ul data-tag="channelList" id="theList" class="list-group mb-3">
+                  <li style="cursor:pointer"  class="list-group-item d-flex justify-content-between lh-sm">
+                    <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Workout 1
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" >Cable Curls</a></li>
+                        <li><a class="dropdown-item" >Tricep Extensions</a></li>
+                        <li><a class="dropdown-item" >Dumbell Curl</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li style="cursor:pointer"  class="list-group-item d-flex justify-content-between lh-sm">
+                    <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      Workout 2
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item">Bench Press</a></li>
+                        <li><a class="dropdown-item" >Chest Flys</a></li>
+                        <li><a class="dropdown-item" >Pushups</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                  <li style="cursor:pointer"  class="list-group-item d-flex justify-content-between lh-sm">
+                    <div class="dropdown">
+                      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Workout 3
+                      </button>
+                      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item">Barbell Squat</a></li>
+                        <li><a class="dropdown-item" >Leg Press</a></li>
+                        <li><a class="dropdown-item" >Leg Extensions</a></li>
+                      </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+
+
+          </div>
+
+
+        </main>
+      </div>
+    </div>
+
+
+
+  </section>
+
+  <footer class="black-section" id="footer">
+    <div class="container-fluid">
+      <a href="main.ejs"> <img class="logo mb-3" src="public/images/fist.png" alt=""></a>
+      <p>2022 Getta Grip! LLC</p>
+
+    </div>
+  </footer>
+
+
+<%- include("partials/footer") -%>
