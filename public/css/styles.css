@@ -1,0 +1,245 @@
+body {
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Bebas Neue', cursive;
+  font-weight: 700;
+  /*Montserrat bold */
+}
+
+p {
+  color: #8f8f8f;
+}
+
+.test {
+  background-color: white;
+  color: black;
+}
+
+/*default/broad sections*/
+
+
+.row {
+  align-content: center;
+}
+
+#features .row {
+  padding-bottom: 5%;
+}
+
+#welcome {
+  padding-top: 5%;
+}
+
+.filter {
+  border: .25rem solid white;
+  background-color: #1E5128;
+  color: white;
+}
+
+.filter:hover {
+  border: .25rem solid white;
+  background-color: white;
+  color: #1E5128;
+}
+
+/* headings */
+.big-heading {
+  font-family: 'Poppins', sans-serif;
+  font-size: 3.5rem;
+  line-height: 1.5;
+  font-weight: 900;
+  /*Montserrat black */
+  align-content: center;
+}
+
+.normal-heading {
+  font-family: 'Poppins', sans-serif;
+}
+
+.title-text {
+  font-family: 'Bebas Neue', cursive;
+}
+
+/*icons and buttons*/
+.icon {
+  color: #4E9F3D;
+  margin-bottom: 1rem;
+}
+
+.icon:hover {
+  color: #1E5128;
+}
+
+.exercise-icon {
+  background-color: #32CD32;
+  color: white;
+}
+
+.exercise-icon:hover {
+  background-color: #4E9F3D;
+}
+
+.getta-grip {
+  color: white;
+}
+
+.getta-grip:hover {
+  color: #8f8f8f;
+}
+
+/* buttons and text and logo */
+
+.text-green{
+  color: #4E9F3D;
+}
+.bg-green{
+  color: #4E9F3D;
+}
+.logo{
+  height: 5rem;
+  width: 10rem;
+  /* margin-bottom: 1rem; */
+}
+
+.logo-md{
+  height: 10rem;
+  width: 18rem;
+}
+.button {
+  margin: 2%;
+}
+
+.trash{
+border: none;
+background: white;
+}
+
+/* download buttons */
+.download-button {
+  margin: 5% 3% 5% 0%;
+}
+
+/* containers */
+.container-fluid {
+  padding: 7% 15%;
+}
+
+.container-fluid {
+  padding-bottom: 0px;
+}
+
+#title .container-fluid {
+  padding: 0% 5% 3%;
+  text-align: center;
+}
+
+#footer .container-fluid {
+  padding: 3% 5% 2%;
+  text-align: center;
+}
+
+#dashboard .container-fluid{
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 0;
+}
+
+/* sections */
+.colored-section {
+  background-color: #1E5128;
+  color: white;
+}
+
+.black-section {
+  background-color: #000000;
+  color: white;
+}
+
+/* navigation bar */
+.navbar-brand {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.nav-item {
+  padding: 0 18px;
+}
+
+.nav-link {
+  font-size: 1.2rem;
+  font-family: "Montserrat";
+}
+
+/* title */
+#title {
+  text-align: center;
+}
+}
+
+/*HOME PAGE EXCLUSIVES*/
+/* features */
+#features {
+  position: relative;
+}
+
+.feature-box {
+  padding: 5%;
+}
+
+.feature-title {
+  color: white;
+  font-size: 1.5rem;
+}
+
+/*EXERCISE PAGE EXLUSIVE*/
+.filter-div {
+  margin-top: 8%;
+}
+
+.page-buttons-section {
+  margin-top: 2%;
+}
+
+.page-buttons {
+  color: #32CD32;
+}
+
+/* footer */
+#footer {
+  background-color: #1E5128;
+}
+
+/*LOGIN PAGE EXCLUSIVE*/
+
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 1rem;
+  margin-top: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2rem;
+}
+
+.form-signin .checkbox {
+  font-weight: 400;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+  margin-bottom: 2rem;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+/* EVENTS */
