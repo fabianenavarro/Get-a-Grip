@@ -1,0 +1,88 @@
+<%- include("partials/header") -%>
+
+
+
+
+
+  <section class="colored-section" id="title">
+    <div class="container-fluid">
+      <!-- Nav Bar -->
+      <div class="container-fluid">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+          <div class="logo-group">
+            <a class="navbar-brand getta-grip" href="main.ejs">Getta Grip!</a>
+            <a href="index.ejs"> <img class="logo" src="public/images/fist.png" alt=""></a>
+          </div>
+          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="main.ejs" class="nav-link px-2 link-secondary">Home</a></li>
+            <li><a href="exercises.ejs" class="nav-link px-2 link-dark">Exercises</a></li>
+            <li><a href="scheduler.ejs" class="nav-link px-2 link-dark">Scheduler</a></li>
+          </ul>
+
+          <!-- <div class="container-fluid">
+          <button type="button" class="btn btn-dark download-button">Login</button>
+          <button type="button" class="btn btn-outline-light download-button">Sign-up</button>
+        </div> -->
+        </header>
+      </div>
+
+
+      <!-- Title -->
+
+      <div class="row">
+        <!-- fix the padding top in css -->
+        <div class="container-fluid" style="padding-top: 3%">
+          <!-- column that is large or desktop sized takes 6 units or half the space, anything smaller takes full width -->
+          <h1 class="big-heading">Welcome!</h1>
+          <p>Getta Grip! is an application that is aimed towards helping improve our users lives by providing our users with a way to build, share, and learn about different weekly workout routines free and effortlessly on any device. Continue to
+            browse the webiste, or choose to sign up to save progress and schedules. </p>
+
+          <button type="button" class="btn btn-dark btn-lg download-button pb-1"><i class="fab fa-brands fa-google"></i> Sign Up </button>
+          <a href="login.ejs"><button type="button" class="btn btn-outline-light btn-lg download-button pb-1"> Log In </button></a>
+        </div>
+
+
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- Features -->
+
+  <section class="black-section" id="features">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4 feature-box">
+          <i class="icon fas fa-dumbbell fa-4x"></i>
+          <h3 class="feature-title">Workout Safe.</h3>
+          <p>Learn new exercises to add to your workout in a safe and effiecient way.</p>
+        </div>
+        <div class="col-lg-4 feature-box">
+          <i class="icon fas fa-bullseye fa-4x"></i>
+          <h3 class="feature-title">Set Your Goals.</h3>
+          <p>Plan and execute your workouts to reach your health and fitness goals.</p>
+        </div>
+        <div class="col-lg-4 feature-box">
+          <i class="icon fas fa-calendar-alt fa-4x"></i>
+          <h3 class="feature-title">On Your Own Time.</h3>
+          <p>Create your own custom workout schedule that can also accomadate other weekly routines.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- Footer -->
+
+  <footer id="footer">
+    <div class="container-fluid">
+
+      <a href="index.ejs"> <img class="logo mb-3" src="public/images/fist.png" alt=""></a>
+      <p>2022 Getta Grip! LLC</p>
+
+    </div>
+  </footer>
+  <%- include("partials/footer") -%>
