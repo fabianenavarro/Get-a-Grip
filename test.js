@@ -1,3 +1,4 @@
+//ANIMATION SCRIPTS//
 function switchChannel(el){
 // find all the elements in your channel list and loop over them
 Array.prototype.slice.call(document.querySelectorAll('ul[data-tag="channelList"] li')).forEach(function(element){
@@ -8,8 +9,19 @@ Array.prototype.slice.call(document.querySelectorAll('ul[data-tag="channelList"]
 el.classList.add('selected');
 }
 
-// When the user clicks on div, open the popup
-function myFunction() {
-  var popup = document.getElementById("myPopup");
-  popup.classList.toggle("show");
-}
+// Initialize Variables
+var closePopup = document.getElementById("popupclose");
+var overlay = document.getElementById("overlay");
+var popup = document.getElementById("popup");
+var button = document.getElementById("button");
+// Close Popup Event
+closePopup.onclick = function() {
+  overlay.style.display = 'none';
+  popup.style.display = 'none';
+};
+// Show Overlay and Popup
+button.onclick = function() {
+  overlay.style.display = 'block';
+  popup.style.display = 'block';
+};
+//ANIMATION SCRIPT END//
