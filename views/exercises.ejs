@@ -1,2 +1,453 @@
 <%- include("partials/header") -%>
+
+
+<body>
+
+  <section class="colored-section" id="title">
+    <div class="container-fluid">
+      <!-- Nav Bar -->
+      <div class="container-fluid">
+        <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+          <div class="logo-group">
+            <a class="navbar-brand getta-grip" href="main.ejs">Getta Grip!</a>
+            <a href="main.ejs"> <img class="logo" src="public/images/fist.png" alt=""></a>
+          </div>
+          <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="main.ejs" class="nav-link px-2 link-dark">Home</a></li>
+            <li><a href="exercises.ejs" class="nav-link px-2 link-secondary">Exercises</a></li>
+            <li><a href="scheduler.ejs" class="nav-link px-2 link-dark">Scheduler</a></li>
+          </ul>
+
+          <!-- <div class="container-fluid">
+          <button type="button" class="btn btn-dark download-button">Login</button>
+          <button type="button" class="btn btn-outline-light download-button">Sign-up</button>
+        </div> -->
+        </header>
+      </div>
+
+
+      <!-- Title -->
+
+      <div class="row">
+        <div class="container-fluid main-text">
+          <!-- column that is large or desktop sized takes 6 units or half the space, anything smaller takes full width -->
+          <h1 class="big-heading">Exercises</h1>
+          <p>Below, feel free to navigate to whatever execrises you may find useful for your next workout. Either learn more about the exercise, or add it to your catelog to later add to your scheduler.</p>
+
+        </div>
+      </div>
+      <!-- selector -->
+      <h2 class="normal-heading mb-4">Group</h2>
+      <div class="container-fluid row row-cols-1 row-cols-md-3 mb-3 text-center" style="margin: auto">
+
+        <div id="select1" class="col-lg-4 d-flex align-items-stretch">
+
+          <div onClick="applyEquipment()" style="cursor: pointer;" class="card w-100 mb-4 rounded-3 shadow-sm filter">
+            <div class="card-heading py-1">
+              <h1 class="normal-heading">Gym</h1>
+            </div>
+            <div class="card-body">
+
+              <p>You have equipment that is found at an ordinary gym.</p>
+            </div>
+          </div>
+
+        </div>
+        <div id="select2" class="col-lg-4 d-flex align-items-stretch">
+
+          <div onClick="applyEquipment()" style="cursor: pointer;" class="card w-100 mb-4 rounded-3 shadow-sm filter">
+            <div class="card-heading py-1">
+              <h1 class="normal-heading">Limited</h1>
+            </div>
+            <div class="card-body">
+
+              <p>You have equipment, but not as expansive as a gym's selection.</p>
+            </div>
+          </div>
+
+        </div>
+        <div id="select3" class="col-lg-4 d-flex align-items-stretch">
+
+          <div onClick="applyEquipment()" style="cursor: pointer;" class="card w-100 mb-4 rounded-3 shadow-sm filter">
+            <div class="card-heading py-1">
+              <h1 class="normal-heading">At Home</h1>
+            </div>
+            <div class="card-body">
+
+              <p>Small, mobile, or convenient equipment that still has use.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!--selector2-->
+      <h2 class="normal-heading mb-4">Equipment</h2>
+      <div class="container-fluid row row-cols-1 row-cols-md-3 mb-3 text-center" style="margin: auto">
+        <div id="select4" class="col-lg-4 d-flex align-items-stretch">
+
+          <div onClick="applyType()" style="cursor: pointer;" class="card w-100 mb-4 rounded-3 shadow-sm filter">
+            <div class="card-body">
+              <h1 class="normal-heading">Upper Body</h1>
+              <p>Includes the chest, arms, shoulders, and anything else above the waist.</p>
+            </div>
+          </div>
+
+        </div>
+        <div id="select5" class="col-lg-4 d-flex align-items-stretch">
+
+          <div onClick="applyType()" style="cursor: pointer;" class="card w-100 mb-4 rounded-3 shadow-sm filter">
+            <div class="card-body">
+              <h1 class="normal-heading">Lower Body</h1>
+              <p>Includes the quadriceps, hamstrings, glutes, and anything else below the waist.</p>
+            </div>
+          </div>
+
+        </div>
+        <div id="select6" class="col-lg-4 d-flex align-items-stretch">
+
+          <div onClick="applyType()" style="cursor: pointer;" class="card w-100 mb-4 rounded-3 shadow-sm filter">
+            <div class="card-body">
+              <h1 class="normal-heading">Cardio</h1>
+              <p>Any exercise that benefits the cardio-system that gets the heart pumpin'.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    </div>
+
+  </section>
+
+
+
+  <section>
+    <div class="album py-5 black-section">
+      <div class="container">
+
+        <!-- popup boy -->
+        <div id="overlay"></div>
+        <div id="popup">
+          <div class="card text-center border-success popupcontent">
+            <div class="card-header border-sucess">
+              <ul class="nav nav-tabs card-header-tabs">
+                <li class="nav-item">
+                  <a class="nav-link active" aria-current="true" href="#" >Exercise</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Video Link</a>
+                </li>
+              </ul>
+            </div>
+            <div class="card-body">
+              <h5 class="card-title black-text">Workout Name</h5>
+              <p class="card-text">Description.</p>
+              <img src="" alt="">
+              <div class="button-holder popupcontrols">
+                <button name="addWorkout" type="submit" class="btn btn-sm btn-outline-secondary exercise-icon mx-3">Add</button>
+                <button id="popupclose" type="toggle" class="btn btn-sm btn-outline-secondary exercise-icon mx-3">Exit</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- popup boy -->
+
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+
+          <div class="col">
+            <div class="card shadow-sm">
+
+              <div class="image-holder"> <img name="picture" src="public/images/name.png" class="img-fluid"></div>
+              <div class="card-body">
+                <p name="name" class="card-text">name</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button name="addWorkout" type="submit" class=" btn btn-sm btn-outline-secondary exercise-icon">Add</button>
+                    <button  id="button" type="button" class="btn btn-sm btn-outline-secondary exercise-icon popup">Description</button>
+                  </div>
+                  <div class="filter-group">
+                    <small name="musclegroup" class="text-muted"> musclegroup | </small>
+                    <small name="equipment" class=text-muted> equipment </small>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-sm">
+
+              <div class="image-holder"> <img name="picture" src="public/images/name.png" class="img-fluid"></div>
+              <div class="card-body">
+                <p name="name" class="card-text">name</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button name="addWorkout" type="submit" class=" btn btn-sm btn-outline-secondary exercise-icon">Add</button>
+                    <button name="toggleDescription" type="button" class="btn btn-sm btn-outline-secondary exercise-icon" onclick="toggleDescription()">Description</button>
+                  </div>
+                  <div class="filter-group">
+                    <small name="musclegroup" class="text-muted"> musclegroup | </small>
+                    <small name="equipment" class=text-muted> equipment </small>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-sm">
+
+
+              <div class="image-holder"> <img name="picture" src="public/images/name.png" class="img-fluid"></div>
+
+              <div class="card-body">
+                <p name="name" class="card-text">name</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button name="addWorkout" type="submit" class=" btn btn-sm btn-outline-secondary exercise-icon">Add</button>
+                    <button name="toggleDescription" type="button" class="btn btn-sm btn-outline-secondary exercise-icon" onclick="toggleDescription()">Description</button>
+                  </div>
+                  <div class="filter-group">
+                    <small name="musclegroup" class="text-muted"> musclegroup | </small>
+                    <small name="equipment" class=text-muted> equipment </small>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-sm">
+
+              <div class="image-holder"> <img name="picture" src="public/images/name.png" class="img-fluid"></div>
+              <div class="card-body">
+                <p name="name" class="card-text">name</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button name="addWorkout" type="submit" class=" btn btn-sm btn-outline-secondary exercise-icon">Add</button>
+                    <button name="toggleDescription" type="button" class="btn btn-sm btn-outline-secondary exercise-icon">Description</button>
+                  </div>
+                  <div class="filter-group">
+                    <small name="musclegroup" class="text-muted"> musclegroup | </small>
+                    <small name="equipment" class=text-muted> equipment </small>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-sm">
+
+              <div class="image-holder"> <img name="picture" src="public/images/name.png" class="img-fluid"></div>
+              <div class="card-body">
+                <p name="name" class="card-text">name</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button name="addWorkout" type="submit" class=" btn btn-sm btn-outline-secondary exercise-icon">Add</button>
+                    <button name="toggleDescription" type="button" class="btn btn-sm btn-outline-secondary exercise-icon">Description</button>
+                  </div>
+                  <div class="filter-group">
+                    <small name="musclegroup" class="text-muted"> musclegroup | </small>
+                    <small name="equipment" class=text-muted> equipment </small>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-sm">
+
+              <div class="image-holder"> <img name="picture" src="public/images/name.png" class="img-fluid"></div>
+              <div class="card-body">
+                <p name="name" class="card-text">name</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button name="addWorkout" type="submit" class=" btn btn-sm btn-outline-secondary exercise-icon">Add</button>
+                    <button name="toggleDescription" type="button" class="btn btn-sm btn-outline-secondary exercise-icon">Description</button>
+                  </div>
+                  <div class="filter-group">
+                    <small name="musclegroup" class="text-muted"> musclegroup | </small>
+                    <small name="equipment" class=text-muted> equipment </small>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-sm">
+
+              <div class="image-holder"> <img name="picture" src="public/images/name.png" class="img-fluid"></div>
+              <div class="card-body">
+                <p name="name" class="card-text">name</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button name="addWorkout" type="submit" class=" btn btn-sm btn-outline-secondary exercise-icon">Add</button>
+                    <button name="toggleDescription" type="button" class="btn btn-sm btn-outline-secondary exercise-icon">Description</button>
+                  </div>
+                  <div class="filter-group">
+                    <small name="musclegroup" class="text-muted"> musclegroup | </small>
+                    <small name="equipment" class=text-muted> equipment </small>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-sm">
+
+              <div class="image-holder"> <img name="picture" src="public/images/name.png" class="img-fluid"></div>
+              <div class="card-body">
+                <p name="name" class="card-text">name</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button name="addWorkout" type="submit" class=" btn btn-sm btn-outline-secondary exercise-icon">Add</button>
+                    <button name="toggleDescription" type="button" class="btn btn-sm btn-outline-secondary exercise-icon">Description</button>
+                  </div>
+                  <div class="filter-group">
+                    <small name="musclegroup" class="text-muted"> musclegroup | </small>
+                    <small name="equipment" class=text-muted> equipment </small>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="col">
+            <div class="card shadow-sm">
+
+              <div class="image-holder"> <img name="picture" src="public/images/name.png" class="img-fluid"></div>
+              <div class="card-body">
+                <p name="name" class="card-text">name</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button name="addWorkout" type="submit" class=" btn btn-sm btn-outline-secondary exercise-icon">Add</button>
+                    <button name="toggleDescription" type="button" class="btn btn-sm btn-outline-secondary exercise-icon">Description</button>
+                  </div>
+                  <div class="filter-group">
+                    <small name="musclegroup" class="text-muted"> musclegroup | </small>
+                    <small name="equipment" class=text-muted> equipment </small>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+
+              <div class="image-holder"> <img name="picture" src="public/images/name.png" class="img-fluid"></div>
+              <div class="card-body">
+                <p name="name" class="card-text">name</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button name="addWorkout" type="submit" class=" btn btn-sm btn-outline-secondary exercise-icon">Add</button>
+                    <button name="toggleDescription" type="button" class="btn btn-sm btn-outline-secondary exercise-icon">Description</button>
+                  </div>
+                  <div class="filter-group">
+                    <small name="musclegroup" class="text-muted"> musclegroup | </small>
+                    <small name="equipment" class=text-muted> equipment </small>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+
+              <div class="image-holder"> <img name="picture" src="public/images/name.png" class="img-fluid"></div>
+              <div class="card-body">
+                <p name="name" class="card-text">name</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button name="addWorkout" type="submit" class=" btn btn-sm btn-outline-secondary exercise-icon">Add</button>
+                    <button name="toggleDescription" type="button" class="btn btn-sm btn-outline-secondary exercise-icon">Description</button>
+                  </div>
+                  <div class="filter-group">
+                    <small name="musclegroup" class="text-muted"> musclegroup | </small>
+                    <small name="equipment" class=text-muted> equipment </small>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="col">
+            <div class="card shadow-sm">
+
+              <div class="image-holder"> <img name="picture" src="public/images/name.png" class="img-fluid"></div>
+              <div class="card-body">
+                <p name="name" class="card-text">name</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <div class="btn-group">
+                    <button name="addWorkout" type="submit" class=" btn btn-sm btn-outline-secondary exercise-icon">Add</button>
+                    <button name="toggleDescription" type="button" class="btn btn-sm btn-outline-secondary exercise-icon">Description</button>
+                  </div>
+                  <div class="filter-group">
+                    <small name="musclegroup" class="text-muted"> musclegroup | </small>
+                    <small name="equipment" class=text-muted> equipment </small>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="container page-buttons-section">
+            <div class="text-center">
+              <button type="button" class="btn page-buttons">
+                < </button>
+                  <button type="button" class="btn page-buttons">1</button>
+                  <button type="button" class="btn page-buttons">2</button>
+                  <button type="button" class="btn page-buttons">3</button>
+                  <button type="button" class="btn page-buttons">></button>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <!-- Footer -->
+
+  <footer id="footer">
+    <div class="container-fluid">
+      <a href="main.ejs"> <img class="logo mb-3" src="public/images/fist.png" alt=""></a>
+      <p>2022 Getta Grip! LLC</p>
+
+    </div>
+  </footer>
+
 <%- include("partials/footer") -%>
