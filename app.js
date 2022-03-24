@@ -17,13 +17,16 @@ const mongoose = require('mongoose')
 //   // perform actions on the collection object
 //   client.close();
 // });
+
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
 
-mongoose.connect("mongodb+srv://tommy:tommy@gettagrip.3ilws.mongodb.net/ggDB?retryWrites=true&w=majority", {useNewUrlParser: true});
+
+mongoose.connect("mongodb+srv://tommy:tommy@gettagrip.3ilws.mongodb.net/GettaGrip?retryWrites=true&w=majority", {useNewUrlParser: true});
+//mongoose.connect("mongodb+srv://tommy:tommy@gettagrip.3ilws.mongodb.net/Users?retryWrites=true&w=majority", {useNewUrlParser: true});
 
 const ggSchema = new mongoose.Schema({
   name: {
@@ -39,9 +42,28 @@ const ggSchema = new mongoose.Schema({
   selected: Boolean
 });
 
+const userSchema = new mongoose.Schema({
+  name: {
+    type: String,
+    require: [1, "Needs a name"]
+  },
+  email: {
+    type: String,
+    require: [1, "Needs an email"]
+  },
+  all: [String],
+  selected: [String],
+  day1: [String],
+  day2: [String],
+  day3: [String],
+  day4: [String],
+  day5: [String],
+  day6: [String],
+  day7: [String],
+});
 
 const Exercise = mongoose.model("Exercise", ggSchema);
-
+const User = mongoose.model("User", userSchema);
 // new object template
 // const = new Exercise ({
 //   name: "",
@@ -270,7 +292,7 @@ const pushPress = new Exercise ({
   name: "Push Press",
   description: "Grab a barbell with overhand, and hold it to shoulder height. Low your knees and keep your torso upright, then extend your knees and hips to drive the barbell overhead, standing tall.",
   picture: "pushPress.png",
-  musclegroup: "Cardio",
+  musclegroup: "Upper",
   reps: "3x12",
   equipment: "Gym",
   embedded: "https://www.youtube.com/watch?v=iaBVSJm78ko",
