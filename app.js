@@ -76,6 +76,19 @@ const User = mongoose.model("User", userSchema);
 //   selected: 0
 // });
 
+const tommy = new User({
+  name: "tommy",
+  email: "tommyrlerma@gmail.com",
+  all:[],
+  selected: [],
+  day1: [],
+  day2: [],
+  day3: [],
+  day4: [],
+  day5: [],
+  day6: [],
+  day7: []
+});
 
 //<iframe width="1280" height="720" src="" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 const benchPress = new Exercise ({
